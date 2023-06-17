@@ -95,13 +95,14 @@ section {
 }
 
 #mytext {
-  background-color: goldenrod;
+  background-color: rgba(218, 165, 32, 0.8);
   color: #fff;
 }
 
 .mybtn {
   display: block;
   background-color: violet;
+  color: black;
   border-radius: 16px;
   margin: 0 auto;
 }

@@ -3,8 +3,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(255, 183, 0);
-  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond,
-    "Times New Roman", serif;
+  font-family: "Franklin Gothic Medium", Geneva, Tahoma, Verdana, sans-serif;
   text-align: center;
 }
 

@@ -14,12 +14,12 @@ myBtn.addEventListener("click", FsubmitBtn);
 
 i = 1;
 function fnsubmit() {
-  var odiv = document.getElementById("box");
-  var oem = odiv.getElementsByTagName("em")[0];
-  var otext = document.getElementById("text");
-  var oli = odiv.getElementsByTagName("li");
-  var add_li = document.createElement("li");
-  var o_span = document.createElement("span");
+  let odiv = document.getElementById("box");
+  let oem = odiv.getElementsByTagName("em")[0];
+  let otext = document.getElementById("text");
+  let oli = odiv.getElementsByTagName("li");
+  let add_li = document.createElement("li");
+  let o_span = document.createElement("span");
   if (otext.value == "") {
     alert("Please fill out this field!");
     return;
@@ -33,8 +33,8 @@ function fnsubmit() {
   add_li.index = i;
   add_li.style.background = "rgba(218, 165, 32, 0.6)";
   add_li.style.marginBottom = "20px";
-  var str = document.createTextNode(otext.value);
-  var strspan = document.createTextNode("确定删除" + otext.value + "内容？");
+  let str = document.createTextNode(otext.value);
+  let strspan = document.createTextNode("确定删除" + otext.value + "内容？");
   add_li.appendChild(o_span);
   o_span.style.display = "none";
   o_span.appendChild(strspan);
@@ -42,7 +42,7 @@ function fnsubmit() {
   odiv.appendChild(add_li);
   i++;
   for (j = 0; j < oli.length; j++) {
-    var m = j;
+    let m = j;
     oli[j].onmouseover = function () {
       this.style.background = "rgb(0, 255, 255)";
       this.childNodes(o_span).style.display = "block";

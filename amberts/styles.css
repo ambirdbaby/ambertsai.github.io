@@ -3,7 +3,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(255, 183, 0);
-  font-family: "Franklin Gothic Medium", Impact, Geneva, Tahoma, Verdana, sans-serif;
+  font-family: "Franklin Gothic Medium", Impact, Geneva, Tahoma, Verdana,
+    sans-serif;
   text-align: center;
 }
 
@@ -94,14 +95,14 @@ section {
   width: 98%;
 }
 
-#mytext {
+#text {
   background-color: rgba(218, 165, 32, 0.6);
   color: #fff;
 }
 
 .mybtn {
   display: block;
-  background-color: violet;
+  background-color: aqua;
   color: black;
   border-radius: 16px;
   margin: 0 auto;
@@ -109,5 +110,11 @@ section {
 
 .mybtn:hover {
   background-color: black;
-  color: violet;
+  color: aqua;
 }
+
+#box {
+  padding: 25px 10px 0;
+  margin-bottom: 10px;
+}
+

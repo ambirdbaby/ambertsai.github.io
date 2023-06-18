@@ -34,7 +34,7 @@ function fnsubmit() {
   add_li.style.background = "rgba(218, 165, 32, 0.6)";
   add_li.style.marginBottom = "20px";
   var str = document.createTextNode(otext.value);
-  var strspan = document.createTextNode("Delete" + otext.value + "Content?");
+  var strspan = document.createTextNode("确定删除" + otext.value + "内容？");
   add_li.appendChild(o_span);
   o_span.style.display = "none";
   o_span.appendChild(strspan);
@@ -58,6 +58,5 @@ function fnsubmit() {
         oem.style.display = "block";
       }
     };
-  }                              
+  }
 }
-          

@@ -39,7 +39,7 @@
     <!--Header-->
     <header>
       <div>
-       <a target="_self" href="index.html"
+        <a target="_self" href="index.html"
           ><img
             width="120"
             src="images/amberts-modified.png"
@@ -86,18 +86,24 @@
     </section>
 
     <section>
-      <div class="text">
+      <div class="mytextarea">
+        <div id="box"><em></em></div>
         <textarea
           name="mytext"
-          id="mytext"
+          id="text"
           cols="30"
           rows="10"
           placeholder="
           Heyyy :)
           Tell me something..."
         ></textarea>
-
-        <button class="mybtn">Click!</button>
+        <input
+          id="btn"
+          type="button"
+          class="mybtn"
+          onclick="fnsubmit()"
+          value="Click!"
+        />
       </div>
     </section>
 

@@ -60,7 +60,7 @@ section {
 }
 
 .partofwork {
-  margin: 4rem 0;
+  margin-bottom: 20px;
 }
 
 .bg-img {
@@ -116,4 +116,21 @@ section {
 #box {
   padding: 25px 10px 0;
   margin-bottom: 10px;
-} 
+}
+
+.d-list {
+  margin: 50px 0;
+}
+
+.d-list a {
+  margin: 0 10px;
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-decoration: none;
+  color: deeppink;
+  transition: 0.8s;
+}
+
+.d-list a:hover {
+  color: wheat;
+}

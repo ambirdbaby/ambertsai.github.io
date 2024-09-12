@@ -32,6 +32,7 @@ section {
 }
 
 .introduction {
+  border-width: 350;
   margin-top: 2.5rem;
   padding: 1rem;
   background-color: rgba(218, 165, 32, 0.3);

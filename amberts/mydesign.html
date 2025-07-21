@@ -1,110 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amber Tsai</title>
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="Welcome to Amber's Blog" />
-    <meta name="author" content="Amber Tsai" />
-    <base target="_blank" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amber Tsai</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Welcome to Amber's Blog" />
+  <meta name="author" content="Amber Tsai" />
+  <base target="_blank" />
 
-    <!--Page icon goes here-->
-    <link rel="shortcut icon" href="./images/amberts-modified.png" />
-    <link rel="bookmark" href="./images/amberts-modified.png" />
+  <!-- Page icon -->
+  <link rel="shortcut icon" href="./images/amberts-modified.png" />
+  <link rel="bookmark" href="./images/amberts-modified.png" />
 
-    <!-- CSS Stylesheets -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
+  <!-- CSS Stylesheets -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/8f6ed67775.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Font Awesome -->
+  <script
+    src="https://kit.fontawesome.com/8f6ed67775.js"
+    crossorigin="anonymous"
+  ></script>
 
-    <!-- Bootstrap Scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <!-- Bootstrap Scripts -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
 
-  <body>
-    <main>
-      <!---Header-->
-      <header>
-        <div>
-          <a target="_self" href="index.html"
-            ><img
-              width="120"
-              src="images/amberts-modified.png"
-              alt="Amber profile picture"
-          /></a>
+  <style>
+    .d-list {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .d-list a {
+      color: hotpink;
+      margin: 0 10px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .d-list a.active {
+      border-bottom: 2px solid hotpink;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .works {
+      margin-bottom: 20px;
+    }
+
+    .works img {
+      width: 80%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- Header -->
+    <header class="text-center my-3">
+      <a target="_self" href="index.html">
+        <img width="120" src="images/amberts-modified.png" alt="Amber profile picture" />
+      </a>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+      <div class="container d-flex justify-content-center">
+        <div class="box mx-3">
+          <a class="navbar-brand" target="_self" href="aboutMe.html">
+            <img src="./images/aboutme.png" alt="About me" width="150" />
+          </a>
         </div>
-      </header>
-
-      <!--Navbar-->
-      <nav>
-        <div class="container">
-          <div class="box">
-            <a class="navbar-brand" target="_self" href="aboutMe.html">
-              <img src="./images/aboutme.png" alt="About me" width="150" />
-            </a>
-          </div>
-          <div class="box">
-            <a class="navbar-brand" target="_self" href="#">
-              <img src="./images/mydesign.png" alt="My design" width="150" />
-            </a>
-          </div>
-          <div class="box">
-            <a class="navbar-brand" target="_self" href="contact.html">
-              <img src="./images/contactme.png" alt="Contact me" width="150" />
-            </a>
-          </div>
+        <div class="box mx-3">
+          <a class="navbar-brand" target="_self" href="#">
+            <img src="./images/mydesign.png" alt="My design" width="150" />
+          </a>
         </div>
-      </nav>
-
-      <!--Main-->
-      <div class="d-list">
-        <a href="#" target="_self">Interior</a>
-        <a href="#" target="_self">3D Design</a>
+        <div class="box mx-3">
+          <a class="navbar-brand" target="_self" href="contact.html">
+            <img src="./images/contactme.png" alt="Contact me" width="150" />
+          </a>
+        </div>
       </div>
-      <div class="partofwork">
+    </nav>
 
+    <!-- Main -->
+    <div class="d-list">
+      <a class="tab-link active" onclick="showTab('interior')">Interior</a>
+      <a class="tab-link" onclick="showTab('design3d')">3D Design</a>
+    </div>
 
-        <div class="works">
-          <img src="./images/lemonade.png" alt="Game Room Image" />
-        </div>
-
-        <div class="works">
-          <img src="./images/SK8ER.png" alt="Skateboard Boy Image" />
-        </div>
-
-        <div class="works">
-          <img src="./images/ETGUMMY-002.png" alt="ET Gummy Image" />
-        </div>
-
-        <div class="works">
-          <img src="./images/02-ET-1.png" alt="ET Phone Image" />
-        </div>
-
-        <div class="works">
-          <img src="./images/004.png" alt="Waiter" />
-        </div>
+    <!-- Tab content -->
+    <div id="interior" class="tab-content active">
+      <div class="works">
+        <img src="./images/lemonade.png" alt="Lemonade Interior" />
       </div>
-    </main>
+      <div class="works">
+        <img src="./images/SK8ER.png" alt="Skateboard Boy" />
+      </div>
+    </div>
 
-    <script>
-      document.oncontextmenu = new Function("return false");
-      oncontextmenu = "return false;";
-    </script>
-  </body>
+    <div id="design3d" class="tab-content">
+      <div class="works">
+        <img src="./images/ETGUMMY-002.png" alt="ET Gummy" />
+      </div>
+      <div class="works">
+        <img src="./images/02-ET-1.png" alt="ET Phone" />
+      </div>
+      <div class="works">
+        <img src="./images/004.png" alt="Waiter" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Disable right-click -->
+  <script>
+    document.oncontextmenu = () => false;
+
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const links = document.querySelectorAll('.tab-link');
+
+      tabs.forEach(t => t.classList.remove('active'));
+      links.forEach(l => l.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
 </html>

@@ -87,6 +87,40 @@ section {
   color: chocolate;
 }
 
+/* 共同樣式 */
+.tab-link {
+  margin: 0 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Interior 專屬樣式 */
+.interior-tab {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #FF66CC; /* 可愛粉紅色 */
+}
+
+/* 3D Design 專屬樣式 */
+.design3d-tab {
+  font-family: 'Courier New', monospace;
+  color: #66FFCC; /* 螢光綠藍 */
+}
+
+/* active 樣式（選中狀態） */
+.tab-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* 滑鼠 hover */
+.tab-link:hover {
+  transform: scale(1.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 /* 圖片 */
 
 .partofwork {

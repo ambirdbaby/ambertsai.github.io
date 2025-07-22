@@ -110,9 +110,9 @@ section {
 =         Tab Links            =
 ==============================*/
 .tab-link {
-  color: white; /* 字體顏色：白色 */
-  font-weight: 300; /* 字變細 */
-  font-family: 'Poppins', sans-serif; /* 字體：簡潔有線條感 */
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   font-size: 22px;
   margin: 0 10px;
   text-decoration: none;
@@ -127,12 +127,18 @@ section {
   height: 3px;
   bottom: -3px;
   left: 0;
-  background-color: #39FF14; /* 螢光綠 */
+  background-color: #39FF14; /* 螢光綠底線 */
   transition: width 0.3s ease;
 }
 
 .tab-link:hover::after {
   width: 100%;
+}
+
+/* 👇 防止點過變成紫/粉紅色 */
+.tab-link:visited {
+  color: white;
+  text-decoration: none;
 }
 
 

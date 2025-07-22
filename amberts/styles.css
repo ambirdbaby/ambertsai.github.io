@@ -1,3 +1,6 @@
+/*==============================
+=        Global Base           =
+==============================*/
 body {
   padding: 0;
   margin: 0;
@@ -8,12 +11,11 @@ body {
 }
 
 .homepage-center {
-  height: 100vh; /* 滿版視窗高 */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 垂直置中 */
-  align-items: center;      /* 水平置中 */
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 放大 Logo 頭像 */
@@ -22,9 +24,11 @@ body {
   max-width: 80%;
 }
 
-/* 縮小底下按鈕字體 */
+/* 縮小底下導覽圖片按鈕 */
 .container .box img {
   width: 80px;
+  height: auto;
+  display: block;
 }
 
 /*==============================
@@ -42,7 +46,6 @@ header ul li {
   list-style-type: none;
 }
 
-
 /*==============================
 =         Layout Blocks        =
 ==============================*/
@@ -51,12 +54,6 @@ header ul li {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
-
-.container .box img {
-  width: 150px;
-  height: auto;
-  display: block;
 }
 
 section {
@@ -79,7 +76,7 @@ section {
   color: white;
   font-weight: 600;
   font-family: 'Comfortaa', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   margin: 0 10px;
   text-decoration: none;
   position: relative;
@@ -93,7 +90,7 @@ section {
   height: 3px;
   bottom: -3px;
   left: 0;
-  background-color: #39FF14; /* 螢光綠底線 */
+  background-color: #39FF14;
   transition: width 0.3s ease;
 }
 
@@ -101,7 +98,6 @@ section {
   width: 100%;
 }
 
-/* 👇 防止點過變成紫/粉紅色 */
 .tab-link,
 .tab-link:visited,
 .tab-link:active {
@@ -109,6 +105,25 @@ section {
   text-decoration: none !important;
 }
 
+/*==============================
+=         Tab Menu Style       =
+==============================*/
+.d-list {
+  margin: 50px 0;
+}
+
+.d-list a {
+  margin: 0 10px;
+  font-size: 18px;
+  font-family: 'Comfortaa', sans-serif;
+  text-decoration: none;
+  color: deeppink;
+  transition: 0.8s;
+}
+
+.d-list a:hover {
+  color: wheat;
+}
 
 /*==============================
 =         Artworks             =
@@ -137,7 +152,6 @@ section {
   z-index: -1;
 }
 
-
 /*==============================
 =         Contact Box          =
 ==============================*/
@@ -160,7 +174,6 @@ section {
 .contactbox a:hover {
   color: chocolate;
 }
-
 
 /*==============================
 =         Image Gallery        =
@@ -194,7 +207,6 @@ section {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-
 /*==============================
 =         Text & Buttons       =
 ==============================*/
@@ -219,25 +231,4 @@ section {
 #box {
   padding: 25px 10px 0;
   margin-bottom: 10px;
-}
-
-
-/*==============================
-=         Tab Menu Style       =
-==============================*/
-.d-list {
-  margin: 50px 0;
-}
-
-.d-list a {
-  margin: 0 10px;
-  font-size: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-decoration: none;
-  color: deeppink;
-  transition: 0.8s;
-}
-
-.d-list a:hover {
-  color: wheat;
 }

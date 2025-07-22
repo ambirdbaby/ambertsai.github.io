@@ -29,9 +29,9 @@ header ul li {
 ==============================*/
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .container .box img {

@@ -153,25 +153,25 @@
   </header>
 
   <!--Navbar-->
-    <nav>
-      <div class="container">
-        <div class="box">
-          <a class="navbar-brand" target="_self" href="#">
-            <img src="./images/aboutme.png" alt="About me"/>
-          </a>
-        </div>
-        <div class="box">
-          <a class="navbar-brand" target="_self" href="mydesign.html">
-            <img src="./images/mydesign.png" alt="My design"/>
-          </a>
-        </div>
-        <div class="box">
-          <a class="navbar-brand" target="_self" href="contact.html">
-            <img src="./images/contactme.png" alt="Contact me"/>
-          </a>
-        </div>
+  <nav>
+    <div class="container">
+      <div class="box">
+        <a class="navbar-brand" target="_self" href="#">
+          <img src="./images/aboutme.png" alt="About me"/>
+        </a>
       </div>
-    </nav>
+      <div class="box">
+        <a class="navbar-brand" target="_self" href="mydesign.html">
+          <img src="./images/mydesign.png" alt="My design"/>
+        </a>
+      </div>
+      <div class="box">
+        <a class="navbar-brand" target="_self" href="contact.html">
+          <img src="./images/contactme.png" alt="Contact me"/>
+        </a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Contact Links -->
   <section>
@@ -199,7 +199,7 @@
       <textarea id="text" placeholder="Heyyy :) Tell me something..."></textarea>
       <br />
       <input type="button" class="mybtn" value="Send Message" onclick="addMessage()" />
-      <input type="button" class="mybtn" id="clearBtn" value="Clear All" onclick="clearAllMessages()" />
+      <input type="button" class="mybtn" id="clearBtn" value="Clear All" onclick="clearInputFields()" />
     </div>
   </section>
 
@@ -219,13 +219,13 @@
 
     function renderMessages() {
       messagesList.innerHTML = '';
-      const messages = loadMessages().reverse();
+      const messages = loadMessages().reverse(); // 最新的在上面
       messages.forEach((msg, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
           <strong>${msg.name}</strong>: ${msg.text}
           <small>🕒 ${msg.time}</small>
-          <button class="delete-btn" onclick="deleteMessage(${messages.length - 1 - index})">刪除</button>
+          <button class="delete-btn" onclick="deleteMessage(${messages.length - 1 - index})">Delete</button>
         `;
         messagesList.appendChild(li);
       });
@@ -237,7 +237,7 @@
       const time = new Date().toLocaleString();
 
       if (!name || !text) {
-        alert('Oops! Don’t forget to enter your name and message 😊');
+        alert('Please enter your name and message 😊');
         return;
       }
 
@@ -245,9 +245,7 @@
       messages.push({ name, text, time });
       saveMessages(messages);
       renderMessages();
-
-      document.getElementById('name').value = '';
-      document.getElementById('text').value = '';
+      clearInputFields();
     }
 
     function deleteMessage(index) {
@@ -257,11 +255,9 @@
       renderMessages();
     }
 
-    function clearAllMessages() {
-      if (confirm('Are you sure you want to delete all messages?')) {
-        localStorage.removeItem('messages');
-        renderMessages();
-      }
+    function clearInputFields() {
+      document.getElementById('name').value = '';
+      document.getElementById('text').value = '';
     }
 
     window.onload = renderMessages;

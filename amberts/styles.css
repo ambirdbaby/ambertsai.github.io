@@ -8,6 +8,12 @@ body {
   background-color: rgb(255, 183, 0);
   font-family: 'Comfortaa', sans-serif;
   text-align: center;
+  color: white;
+}
+
+header img {
+  width: 120px;
+  margin: 20px 0;
 }
 
 .homepage-center {
@@ -24,28 +30,8 @@ body {
   max-width: 80%;
 }
 
-/* ===== 預設（桌機版） ===== */
-.container .box img {
-  width: 180px;
-}
-
-.tab-link {
-  font-size: 18px;
-}
-
-/* ===== 手機版：寬度小於 768px ===== */
-@media (max-width: 768px) {
-  .container .box img {
-    width: 150px;
-  }
-
-  .tab-link {
-    font-size: 15px;
-  }
-}
-
 /*==============================
-=           Header             =
+=        Header                =
 ==============================*/
 header {
   margin: 0 auto;
@@ -60,7 +46,7 @@ header ul li {
 }
 
 /*==============================
-=         Layout Blocks        =
+=        Navbar                =
 ==============================*/
 .container {
   display: flex;
@@ -74,23 +60,15 @@ section {
   justify-content: center;
 }
 
-.introduction {
-  margin-top: 2.5rem;
-  padding: 1rem;
-  background-color: rgba(218, 165, 32, 0.3);
-  text-align: left;
-  font-size: 1.05rem;
+.container .box img {
+  width: 180px;
 }
 
-/*==============================
-=         Tab Links            =
-==============================*/
 .tab-link {
+  font-size: 18px;
   color: white;
   font-weight: 300;
   font-family: 'Comfortaa', sans-serif;
-  font-size: 15px;
-  margin: 0 10px;
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
@@ -119,6 +97,30 @@ section {
 }
 
 /*==============================
+=       Responsive Design       =
+==============================*/
+@media (max-width: 768px) {
+  .container .box img {
+    width: 150px;
+  }
+
+  .tab-link {
+    font-size: 15px;
+  }
+}
+
+/*==============================
+=       Introduction Section    =
+==============================*/
+.introduction {
+  margin-top: 2.5rem;
+  padding: 1rem;
+  background-color: rgba(218, 165, 32, 0.3);
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+/*==============================
 =         Tab Menu Style       =
 ==============================*/
 .d-list {
@@ -139,7 +141,7 @@ section {
 }
 
 /*==============================
-=         Artworks             =
+=         Artworks Section     =
 ==============================*/
 .artworks {
   display: flex;
@@ -166,7 +168,7 @@ section {
 }
 
 /*==============================
-=         Contact Box          =
+=         Contact Page         =
 ==============================*/
 .contact {
   width: 300px;
@@ -177,6 +179,7 @@ section {
   display: inline-block;
   margin: 40px 5px;
   border: 2px dotted #fff;
+  padding: 10px 15px;
 }
 
 .contactbox a {
@@ -188,52 +191,105 @@ section {
   color: chocolate;
 }
 
-/*==============================
-=         Image Gallery        =
-==============================*/
-.partofwork {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.message-wall {
+  margin: 40px auto 20px;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
 }
 
-.works {
-  width: 100%;
-  margin-bottom: 40px;
+.message-wall h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
-.works img {
-  width: 100%;
-  max-width: 1000px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+#messagesList {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.works img:hover {
-  transform: scale(1.03);
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+#messagesList li {
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: left;
+  position: relative;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*==============================
-=         Text & Buttons       =
-==============================*/
-#text {
-  background-color: rgba(218, 165, 32, 0.6);
+#messagesList li strong {
   color: #fff;
 }
 
-.mybtn {
+#messagesList li small {
   display: block;
+  font-size: 12px;
+  color: #eee;
+  margin-top: 5px;
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.input-area {
+  margin: 30px auto 60px;
+  max-width: 500px;
+}
+
+.inputbox,
+#text {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.inputbox {
+  background-color: #fff;
+  color: #333;
+}
+
+#text {
+  height: 120px;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #333;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mybtn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
   background-color: aqua;
   color: black;
-  border-radius: 16px;
-  margin: 0 auto;
+  font-family: 'Comfortaa', sans-serif;
+  cursor: pointer;
 }
 
 .mybtn:hover {
@@ -241,6 +297,18 @@ section {
   color: aqua;
 }
 
+#clearBtn {
+  background-color: lightcoral;
+}
+
+#clearBtn:hover {
+  background-color: crimson;
+  color: white;
+}
+
+/*==============================
+=         Text & Buttons       =
+==============================*/
 #box {
   padding: 25px 10px 0;
   margin-bottom: 10px;

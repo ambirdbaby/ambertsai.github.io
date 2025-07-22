@@ -87,6 +87,8 @@ section {
   color: chocolate;
 }
 
+/ 圖片 /
+
 .partofwork {
   max-width: 1200px;
   margin: 40px auto;
@@ -103,10 +105,17 @@ section {
 
 .works img {
   width: 100%;
-  max-width: 1000px; /* 控制單張圖最大寬度 */
+  max-width: 1000px;
   display: block;
   margin: 0 auto;
-  border-radius: 8px; /* 如果你想讓圖片角落圓潤 */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.works img:hover {
+  transform: scale(1.03);
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 

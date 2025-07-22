@@ -3,7 +3,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(255, 183, 0);
-  font-family: "Franklin Gothic Medium",'Fredoka', 'Comic Neue', Impact, Geneva, Tahoma, Verdana, sans-serif;
+  font-family: 'Fredoka', 'Poppins', 'Nunito', 'Comic Neue', sans-serif;
   text-align: center;
 }
 

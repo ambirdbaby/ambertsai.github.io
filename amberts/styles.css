@@ -110,49 +110,29 @@ section {
 =         Tab Links            =
 ==============================*/
 .tab-link {
-  position: relative;
-  font-size: 24px;
-  font-weight: 600;
-  font-family: 'Quicksand', sans-serif;
-  color: deeppink;
-  margin: 0 20px;
+  color: white;
+  font-weight: 300;
+  font-family: 'Arial', sans-serif;
+  font-size: 22px;
+  margin: 0 10px;
   text-decoration: none;
-  cursor: pointer;
+  position: relative;
   transition: all 0.3s ease;
 }
 
 .tab-link::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0;
-  bottom: -10px; /* 拉開距離，看起來比較有空間 */
-  width: 100%;
+  width: 0%;
   height: 3px;
+  bottom: -3px;
+  left: 0;
   background-color: #39FF14; /* 螢光綠 */
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.tab-link:hover {
-  color: #39FF14;
-  text-shadow: 0 0 5px #39FF14;
+  transition: width 0.3s ease;
 }
 
 .tab-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Active 樣式 */
-.tab-link.active {
-  color: #39FF14;
-}
-
-.tab-link.active::after {
-  transform: scaleX(1);
-  transform-origin: left;
-  background-color: #39FF14;
+  width: 100%;
 }
 
 

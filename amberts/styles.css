@@ -31,6 +31,13 @@ header ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
+}
+
+.container .box img {
+  width: 150px;
+  height: auto;
+  display: block;
 }
 
 section {

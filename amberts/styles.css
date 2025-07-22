@@ -21,13 +21,13 @@ body {
 
 /* ===== 共用：Logo 頭像大小 ===== */
 .main-logo {
-  width: 180px;
+  width: 200px;
   max-width: 80%;
 }
 
 /* ===== 預設（桌機版） ===== */
 .container .box img {
-  width: 120px;
+  width: 150px;
 }
 
 .tab-link {
@@ -37,7 +37,7 @@ body {
 /* ===== 手機版：寬度小於 768px ===== */
 @media (max-width: 768px) {
   .container .box img {
-    width: 90px;
+    width: 120px;
   }
 
   .tab-link {

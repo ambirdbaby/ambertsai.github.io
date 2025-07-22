@@ -110,9 +110,9 @@ section {
 =         Tab Links            =
 ==============================*/
 .tab-link {
-  color: white;
-  font-weight: 300;
-  font-family: 'Arial', sans-serif;
+  color: white; /* 字體顏色：白色 */
+  font-weight: 300; /* 字變細 */
+  font-family: 'Poppins', sans-serif; /* 字體：簡潔有線條感 */
   font-size: 22px;
   margin: 0 10px;
   text-decoration: none;

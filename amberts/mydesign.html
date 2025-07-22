@@ -28,6 +28,8 @@
     src="https://kit.fontawesome.com/8f6ed67775.js"
     crossorigin="anonymous"
   ></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 
   <!-- Bootstrap Scripts -->
@@ -38,21 +40,45 @@
   ></script>
 
   <style>
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background-color: rgb(255, 183, 0);
+      margin: 0;
+      padding: 0;
+    }
+
     .d-list {
       text-align: center;
       margin-top: 20px;
     }
 
     .d-list a {
-      color: hotpink;
+      color: white;
       margin: 0 10px;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 18px;
       text-decoration: none;
       cursor: pointer;
+      position: relative;
+    }
+
+    .d-list a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      bottom: -3px;
+      left: 0;
+      background-color: #39FF14;
+      transition: width 0.3s ease;
+    }
+
+    .d-list a:hover::after {
+      width: 100%;
     }
 
     .d-list a.active {
-      border-bottom: 2px solid hotpink;
+      color: white;
     }
 
     .tab-content {
@@ -73,6 +99,14 @@
       width: 80%;
       max-width: 400px;
     }
+
+    header img {
+      width: 180px;
+    }
+
+    nav .box img {
+      width: 100px;
+    }
   </style>
 </head>
 
@@ -81,31 +115,30 @@
     <!-- Header -->
     <header class="text-center my-3">
       <a target="_self" href="index.html">
-        <img width="120" src="images/amberts-modified.png" alt="Amber profile picture" />
+        <img src="images/amberts-modified.png" alt="Amber profile picture" />
       </a>
     </header>
 
     <!-- Navbar -->
-<nav>
-  <div class="container">
-    <div class="box">
-      <a href="aboutMe.html" target="_self">
-        <img src="./images/aboutme.png" alt="About me" width="150" />
-      </a>
-    </div>
-    <div class="box">
-      <a href="#" target="_self">
-        <img src="./images/mydesign.png" alt="My Design" width="150" />
-      </a>
-    </div>
-    <div class="box">
-      <a href="contact.html" target="_self">
-        <img src="./images/contactme.png" alt="Contact me" width="150" />
-      </a>
-    </div>
-  </div>
-</nav>
-
+    <nav>
+      <div class="container text-center">
+        <div class="box d-inline-block">
+          <a href="aboutMe.html" target="_self">
+            <img src="./images/aboutme.png" alt="About me" />
+          </a>
+        </div>
+        <div class="box d-inline-block">
+          <a href="#" target="_self">
+            <img src="./images/mydesign.png" alt="My Design" />
+          </a>
+        </div>
+        <div class="box d-inline-block">
+          <a href="contact.html" target="_self">
+            <img src="./images/contactme.png" alt="Contact me" />
+          </a>
+        </div>
+      </div>
+    </nav>
 
     <!-- Main -->
     <div class="d-list">

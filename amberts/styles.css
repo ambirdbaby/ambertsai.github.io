@@ -59,10 +59,6 @@ section {
   margin: 20px;
 }
 
-.partofwork {
-  margin-bottom: 20px;
-}
-
 .bg-img {
   position: absolute;
   margin: 120px 45%;
@@ -91,13 +87,19 @@ section {
   color: chocolate;
 }
 
-.works img {
+.partofwork {
   width: 100%;
-  max-width: 800px;
-  display: block;
-  margin: 0 auto;
+  max-width: 1200px; /* 可調整最大寬度 */
+  margin: 40px auto;  /* 水平置中 + 上下間距 */
+  padding: 0 20px;    /* 預防左右貼邊 */
+  box-sizing: border-box;
 }
 
+.works img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 #text {
   background-color: rgba(218, 165, 32, 0.6);
   color: #fff;

@@ -19,11 +19,22 @@ body {
 }
 
 
+/* ===== 共用：Logo 頭像大小 ===== */
 .main-logo {
   width: 180px;
   max-width: 80%;
 }
 
+/* ===== 預設（桌機版） ===== */
+.container .box img {
+  width: 120px;
+}
+
+.tab-link {
+  font-size: 22px;
+}
+
+/* ===== 手機版：寬度小於 768px ===== */
 @media (max-width: 768px) {
   .container .box img {
     width: 90px;

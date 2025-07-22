@@ -88,18 +88,28 @@ section {
 }
 
 .partofwork {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.works {
   width: 100%;
-  max-width: 1200px; /* 可調整最大寬度 */
-  margin: 40px auto;  /* 水平置中 + 上下間距 */
-  padding: 0 20px;    /* 預防左右貼邊 */
-  box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
 .works img {
   width: 100%;
-  height: auto;
+  max-width: 1000px; /* 控制單張圖最大寬度 */
   display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* 如果你想讓圖片角落圓潤 */
 }
+
+
 #text {
   background-color: rgba(218, 165, 32, 0.6);
   color: #fff;

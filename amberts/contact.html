@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
   <style>
     body {
-      padding: 0;
       margin: 0;
       background-color: rgb(255, 183, 0);
       font-family: 'Comfortaa', sans-serif;
@@ -37,8 +36,63 @@
       color: chocolate;
     }
 
-    .mytextarea {
-      margin: 20px auto;
+    .message-wall {
+      margin: 40px auto 20px;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .message-wall h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    #messagesList {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #messagesList li {
+      padding: 12px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      font-size: 16px;
+      text-align: left;
+      position: relative;
+    }
+
+    #messagesList li strong {
+      color: #fff;
+    }
+
+    #messagesList li small {
+      display: block;
+      font-size: 12px;
+      color: #eee;
+      margin-top: 5px;
+    }
+
+    .delete-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .delete-btn:hover {
+      color: red;
+    }
+
+    .input-area {
+      margin: 30px auto 60px;
       max-width: 500px;
     }
 
@@ -80,43 +134,13 @@
       color: aqua;
     }
 
-    .message-wall {
-      margin: 40px auto;
-      width: 90%;
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 20px;
+    #clearBtn {
+      background-color: lightcoral;
     }
 
-    .message-wall h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    #messagesList {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    #messagesList li {
-      padding: 12px;
-      margin-bottom: 10px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      font-size: 16px;
-      text-align: left;
-    }
-
-    #messagesList li strong {
-      color: #fff;
-    }
-
-    #messagesList li small {
-      display: block;
-      font-size: 12px;
-      color: #eee;
-      margin-top: 5px;
+    #clearBtn:hover {
+      background-color: crimson;
+      color: white;
     }
   </style>
 </head>
@@ -128,7 +152,7 @@
     </a>
   </header>
 
-  <!-- Contact Info -->
+  <!-- Contact Links -->
   <section>
     <div class="contactbox">
       <a href="https://www.instagram.com/ylcai/">*Instagram*</a>
@@ -138,39 +162,7 @@
     </div>
   </section>
 
-  <!-- Input Area -->
-  <section>
-    <div class="mytextarea">
-      <input
-        type="text"
-        id="name"
-        placeholder="Your name"
-        class="inputbox"
-      />
-      <br />
-      <textarea
-        name="mytext"
-        id="text"
-        placeholder="Heyyy :)\nTell me something..."
-      ></textarea>
-      <br />
-      <input
-        id="btn"
-        type="button"
-        class="mybtn"
-        value="Send Message"
-      />
-      <input
-        id="clearBtn"
-        type="button"
-        class="mybtn"
-        style="background-color: lightcoral;"
-        value="Clear All"
-      />
-    </div>
-  </section>
-
-  <!-- Message Display -->
+  <!-- Message Wall -->
   <section>
     <div class="message-wall">
       <h3>Messages</h3>
@@ -178,59 +170,80 @@
     </div>
   </section>
 
-  <!-- JavaScript -->
+  <!-- Input Area -->
+  <section>
+    <div class="input-area">
+      <input type="text" id="name" placeholder="Your name" class="inputbox" />
+      <br />
+      <textarea id="text" placeholder="Heyyy :)\nTell me something..."></textarea>
+      <br />
+      <input type="button" class="mybtn" value="Send Message" onclick="addMessage()" />
+      <input type="button" class="mybtn" id="clearBtn" value="Clear All" onclick="clearAllMessages()" />
+    </div>
+  </section>
+
+  <!-- Script -->
   <script>
     document.oncontextmenu = () => false;
 
-    const nameInput = document.getElementById('name');
-    const textInput = document.getElementById('text');
-    const sendBtn = document.getElementById('btn');
-    const clearBtn = document.getElementById('clearBtn');
-    const messageList = document.getElementById('messagesList');
+    const messagesList = document.getElementById('messagesList');
 
-    // Load saved messages
-    window.onload = function () {
-      const savedMessages = JSON.parse(localStorage.getItem('messages'));
-      if (savedMessages) {
-        savedMessages.forEach(msg => displayMessage(msg));
-      }
-    };
-
-    // Display a single message
-    function displayMessage(msg) {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${msg.name}</strong>: ${msg.text}<small>🕒 ${msg.time}</small>`;
-      messageList.appendChild(li);
+    function saveMessages(messages) {
+      localStorage.setItem('messages', JSON.stringify(messages));
     }
 
-    // Add new message
-    sendBtn.addEventListener('click', () => {
-      const name = nameInput.value.trim();
-      const message = textInput.value.trim();
+    function loadMessages() {
+      return JSON.parse(localStorage.getItem('messages')) || [];
+    }
+
+    function renderMessages() {
+      messagesList.innerHTML = '';
+      const messages = loadMessages().reverse();
+      messages.forEach((msg, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${msg.name}</strong>: ${msg.text}
+          <small>🕒 ${msg.time}</small>
+          <button class="delete-btn" onclick="deleteMessage(${messages.length - 1 - index})">刪除</button>
+        `;
+        messagesList.appendChild(li);
+      });
+    }
+
+    function addMessage() {
+      const name = document.getElementById('name').value.trim();
+      const text = document.getElementById('text').value.trim();
       const time = new Date().toLocaleString();
 
-      if (name && message) {
-        const msgObj = { name, text: message, time };
-        displayMessage(msgObj);
-
-        const saved = JSON.parse(localStorage.getItem('messages')) || [];
-        saved.push(msgObj);
-        localStorage.setItem('messages', JSON.stringify(saved));
-
-        nameInput.value = '';
-        textInput.value = '';
-      } else {
-        alert('請輸入名字和留言喔！');
+      if (!name || !text) {
+        alert('Oops! Don’t forget to enter your name and message 😊');
+        return;
       }
-    });
 
-    // Clear all messages
-    clearBtn.addEventListener('click', () => {
-      if (confirm('確定要刪除所有留言嗎？')) {
+      const messages = loadMessages();
+      messages.push({ name, text, time });
+      saveMessages(messages);
+      renderMessages();
+
+      document.getElementById('name').value = '';
+      document.getElementById('text').value = '';
+    }
+
+    function deleteMessage(index) {
+      const messages = loadMessages();
+      messages.splice(index, 1);
+      saveMessages(messages);
+      renderMessages();
+    }
+
+    function clearAllMessages() {
+      if (confirm('Are you sure you want to delete all messages?')) {
         localStorage.removeItem('messages');
-        messageList.innerHTML = '';
+        renderMessages();
       }
-    });
+    }
+
+    window.onload = renderMessages;
   </script>
 </body>
 </html>

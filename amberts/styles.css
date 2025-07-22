@@ -167,12 +167,12 @@ section {
   z-index: -1;
 }
 
-.work img {
+.works img {
   border-radius: 16px;          /* 圓角效果 */
   transition: transform 0.3s ease; /* 動畫效果 */
 }
 
-.work img:hover {
+.works img:hover {
   transform: scale(1.05);       /* 滑過放大效果 */
 }
 

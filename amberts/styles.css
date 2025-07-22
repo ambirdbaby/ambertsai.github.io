@@ -18,17 +18,20 @@ body {
   align-items: center;
 }
 
-/* 放大 Logo 頭像 */
+
 .main-logo {
   width: 150px;
   max-width: 80%;
 }
 
-/* 縮小底下導覽圖片按鈕 */
-.container .box img {
-  width: 110px;
-  height: auto;
-  display: block;
+@media (max-width: 768px) {
+  .container .box img {
+    width: 90px;
+  }
+
+  .tab-link {
+    font-size: 18px;
+  }
 }
 
 /*==============================

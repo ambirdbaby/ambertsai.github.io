@@ -18,13 +18,13 @@ body {
 
 /* 放大 Logo 頭像 */
 .main-logo {
-  width: 220px;
+  width: 300px;
   max-width: 80%;
 }
 
 /* 縮小底下按鈕字體 */
 .container .box img {
-  width: 120px;
+  width: 80px;
 }
 
 /*==============================

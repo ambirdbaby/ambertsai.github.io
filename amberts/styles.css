@@ -18,7 +18,6 @@ body {
   align-items: center;
 }
 
-
 /* ===== 共用：Logo 頭像大小 ===== */
 .main-logo {
   width: 220px;
@@ -245,4 +244,34 @@ section {
 #box {
   padding: 25px 10px 0;
   margin-bottom: 10px;
+}
+
+/*==============================
+=       首頁專用樣式            =
+==============================*/
+body.home-page .main-logo {
+  width: 220px;
+}
+
+body.home-page .container .box img {
+  width: 180px;
+}
+
+body.home-page .tab-link {
+  font-size: 18px;
+}
+
+/*==============================
+=       子頁面縮小樣式         =
+==============================*/
+body.sub-page .main-logo {
+  width: 120px;
+}
+
+body.sub-page .container .box img {
+  width: 100px;
+}
+
+body.sub-page .tab-link {
+  font-size: 14px;
 }

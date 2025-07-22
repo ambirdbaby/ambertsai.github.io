@@ -141,8 +141,9 @@ section {
 }
 
 /*==============================
-=         Artworks Section     =
+=        Artworks Section      =
 ==============================*/
+
 .artworks {
   display: flex;
   flex-direction: column;
@@ -167,13 +168,18 @@ section {
   z-index: -1;
 }
 
+/* 圖片樣式 */
 .works img {
-  border-radius: 16px;          /* 圓角效果 */
-  transition: transform 0.3s ease; /* 動畫效果 */
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;             /* 圓角效果 */
+  transition: transform 0.3s ease; /* 滑過動畫 */
 }
 
 .works img:hover {
-  transform: scale(1.05);       /* 滑過放大效果 */
+  transform: scale(1.05);          /* 滑過放大 */
 }
 
 /*==============================

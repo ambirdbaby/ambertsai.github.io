@@ -136,9 +136,11 @@ section {
 }
 
 /* 👇 防止點過變成紫/粉紅色 */
-.tab-link:visited {
-  color: white;
-  text-decoration: none;
+.tab-link,
+.tab-link:visited,
+.tab-link:active {
+  color: white !important;
+  text-decoration: none !important;
 }
 
 

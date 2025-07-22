@@ -286,25 +286,27 @@ section {
   color: white;
 }
 
-/*FOOTER*/
-
+/* ==============================
+=          Footer Info         =
+============================== */
 .footer {
   margin-top: 80px;
   padding: 20px 0;
   font-size: 12px;
-  color: white;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .footer a {
   color: white;
   text-decoration: none;
   margin: 0 8px;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .footer a:hover {
   text-decoration: underline;
+  opacity: 0.9;
 }
 
 /*==============================

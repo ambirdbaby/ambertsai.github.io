@@ -3,11 +3,14 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(255, 183, 0);
-  font-family: "Franklin Gothic Medium", Impact, Geneva, Tahoma, Verdana,
-    sans-serif;
+  font-family: "Franklin Gothic Medium", Impact, Geneva, Tahoma, Verdana, sans-serif;
   text-align: center;
 }
 
+
+/*==============================
+=           Header             =
+==============================*/
 header {
   margin: 0 auto;
 }
@@ -20,8 +23,12 @@ header ul li {
   list-style-type: none;
 }
 
+
+/*==============================
+=         Layout Blocks        =
+==============================*/
 .container {
-  display: flexbox;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -39,6 +46,10 @@ section {
   font-size: 1.05rem;
 }
 
+
+/*==============================
+=         Artworks             =
+==============================*/
 .artworks {
   display: flex;
   flex-direction: column;
@@ -48,8 +59,6 @@ section {
 .artworks div {
   margin: 1rem 0;
 }
-
-/* Testimonials Section */
 
 #designworks {
   margin: 1rem 5rem;
@@ -65,6 +74,10 @@ section {
   z-index: -1;
 }
 
+
+/*==============================
+=         Contact Box          =
+==============================*/
 .contact {
   width: 300px;
 }
@@ -72,10 +85,8 @@ section {
 .contactbox {
   position: relative;
   display: inline-block;
-  margin: 40px 5px 40px;
-  border-width: 2px;
-  border-style: dotted;
-  border-color: #fff;
+  margin: 40px 5px;
+  border: 2px dotted #fff;
 }
 
 .contactbox a {
@@ -87,7 +98,10 @@ section {
   color: chocolate;
 }
 
-/* 共同樣式 */
+
+/*==============================
+=         Tab Links            =
+==============================*/
 .tab-link {
   margin: 0 10px;
   text-decoration: none;
@@ -96,33 +110,30 @@ section {
   transition: all 0.3s ease;
 }
 
-/* Interior 專屬樣式 */
 .interior-tab {
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #FF66CC; /* 可愛粉紅色 */
+  color: #FF66CC;
 }
 
-/* 3D Design 專屬樣式 */
 .design3d-tab {
   font-family: 'Courier New', monospace;
-  color: #66FFCC; /* 螢光綠藍 */
+  color: #66FFCC;
 }
 
-/* active 樣式（選中狀態） */
 .tab-link.active {
   text-decoration: underline;
   font-weight: bold;
 }
 
-/* 滑鼠 hover */
 .tab-link:hover {
   transform: scale(1.1);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
-/* 圖片 */
-
+/*==============================
+=         Image Gallery        =
+==============================*/
 .partofwork {
   max-width: 1200px;
   margin: 40px auto;
@@ -153,6 +164,9 @@ section {
 }
 
 
+/*==============================
+=         Text & Buttons       =
+==============================*/
 #text {
   background-color: rgba(218, 165, 32, 0.6);
   color: #fff;
@@ -176,6 +190,10 @@ section {
   margin-bottom: 10px;
 }
 
+
+/*==============================
+=         Tab Menu Style       =
+==============================*/
 .d-list {
   margin: 50px 0;
 }

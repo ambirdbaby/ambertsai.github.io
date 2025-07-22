@@ -31,7 +31,7 @@ body {
 }
 
 .tab-link {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 /* ===== 手機版：寬度小於 768px ===== */
@@ -41,7 +41,7 @@ body {
   }
 
   .tab-link {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 

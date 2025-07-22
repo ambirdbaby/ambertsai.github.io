@@ -24,12 +24,6 @@ header img {
   align-items: center;
 }
 
-/* ===== 共用：Logo 頭像大小 ===== */
-.main-logo {
-  width: 220px;
-  max-width: 80%;
-}
-
 /*==============================
 =        Header                =
 ==============================*/
@@ -62,69 +56,20 @@ section {
 
 .container .box img {
   width: 180px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
 }
 
-.tab-link {
-  font-size: 18px;
-  color: white;
-  font-weight: 300;
-  font-family: 'Comfortaa', sans-serif;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.tab-link::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  bottom: -3px;
-  left: 0;
-  background-color: #39FF14;
-  transition: width 0.3s ease;
-}
-
-.tab-link:hover::after {
-  width: 100%;
-}
-
-.tab-link,
-.tab-link:visited,
-.tab-link:active {
-  color: white !important;
-  text-decoration: none !important;
+.container .box img:hover {
+  transform: scale(1.05);
 }
 
 /*==============================
-=       Responsive Design       =
-==============================*/
-@media (max-width: 768px) {
-  .container .box img {
-    width: 150px;
-  }
-
-  .tab-link {
-    font-size: 15px;
-  }
-}
-
-/*==============================
-=       Introduction Section    =
-==============================*/
-.introduction {
-  margin-top: 2.5rem;
-  padding: 1rem;
-  background-color: rgba(218, 165, 32, 0.3);
-  text-align: left;
-  font-size: 1.05rem;
-}
-
-/*==============================
-=         Tab Menu Style       =
+=       Tab Menu Style         =
 ==============================*/
 .d-list {
-  margin: 50px 0;
+  margin: 40px 0;
+  text-align: center;
 }
 
 .d-list a {
@@ -132,54 +77,62 @@ section {
   font-size: 18px;
   font-family: 'Comfortaa', sans-serif;
   text-decoration: none;
-  color: deeppink;
-  transition: 0.8s;
+  color: hotpink;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .d-list a:hover {
   color: wheat;
 }
 
+.d-list a.active {
+  border-bottom: 2px solid hotpink;
+}
+
 /*==============================
-=        Artworks Section      =
+=         Tab Content Style    =
 ==============================*/
-
-.artworks {
-  display: flex;
-  flex-direction: column;
+.tab-content {
+  display: none;
   text-align: center;
+  margin-top: 20px;
 }
 
-.artworks div {
-  margin: 1rem 0;
+.tab-content.active {
+  display: block;
 }
 
-#designworks {
-  margin: 1rem 5rem;
+/*==============================
+=         Works Image Style    =
+==============================*/
+.works {
+  margin-bottom: 20px;
 }
 
-.myArt {
-  margin: 20px;
-}
-
-.bg-img {
-  position: absolute;
-  margin: 120px 45%;
-  z-index: -1;
-}
-
-/* 圖片樣式 */
 .works img {
   width: 80%;
   max-width: 400px;
   display: block;
   margin: 0 auto;
-  border-radius: 16px;             /* 圓角效果 */
-  transition: transform 0.3s ease; /* 滑過動畫 */
+  border-radius: 16px;
+  transition: transform 0.3s ease;
 }
 
 .works img:hover {
-  transform: scale(1.05);          /* 滑過放大 */
+  transform: scale(1.05);
+}
+
+/*==============================
+=       Introduction Section   =
+==============================*/
+.introduction {
+  margin-top: 2.5rem;
+  padding: 1rem;
+  background-color: rgba(218, 165, 32, 0.3);
+  text-align: left;
+  font-size: 1.05rem;
 }
 
 /*==============================
@@ -369,4 +322,17 @@ body.sub-page .container .box img {
 
 body.sub-page .tab-link {
   font-size: 15px;
+}
+
+/*==============================
+=       Responsive Design       =
+==============================*/
+@media (max-width: 768px) {
+  .container .box img {
+    width: 150px;
+  }
+
+  .tab-link {
+    font-size: 15px;
+  }
 }

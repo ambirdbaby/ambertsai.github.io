@@ -195,14 +195,16 @@ section {
   margin: 40px auto 20px;
   width: 90%;
   max-width: 600px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
   padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .message-wall h3 {
   font-size: 24px;
   margin-bottom: 15px;
+  color: white;
 }
 
 #messagesList {
@@ -214,17 +216,21 @@ section {
   padding: 12px 16px;
   margin-bottom: 10px;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 16px;
   text-align: left;
   position: relative;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+  color: #333;
+  font-weight: 400;
+  backdrop-filter: blur(2px);
 }
 
 #messagesList li strong {
-  color: #fff;
+  color: white;
+  font-weight: bold;
 }
 
 #messagesList li small {
@@ -257,22 +263,23 @@ section {
 .inputbox,
 #text {
   width: 90%;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 10px;
   margin-bottom: 10px;
   font-family: 'Comfortaa', sans-serif;
+  font-size: 15px;
 }
 
 .inputbox {
-  background-color: #fff;
+  background-color: white;
   color: #333;
 }
 
 #text {
   height: 120px;
   resize: none;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #f7d774;
   color: #333;
 }
 
@@ -286,19 +293,25 @@ section {
   padding: 8px 16px;
   border: none;
   border-radius: 20px;
-  background-color: aqua;
-  color: black;
   font-family: 'Comfortaa', sans-serif;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.mybtn:hover {
+.mybtn:first-child {
+  background-color: aqua;
+  color: black;
+}
+
+.mybtn:first-child:hover {
   background-color: black;
   color: aqua;
 }
 
 #clearBtn {
   background-color: lightcoral;
+  color: white;
 }
 
 #clearBtn:hover {

@@ -131,37 +131,38 @@ section {
   position: relative;
   max-width: 90%;
   margin: 0 auto;
-  overflow: hidden;         /* 防止切換時超出 */
-  aspect-ratio: 16/9;       /* ✅ 固定比例，避免高度跳動 */
-  background: rgba(0, 0, 0, 0.05); /* 過渡時有底色 */
+  overflow: hidden;         
+  aspect-ratio: 16/9;       /* 固定比例 */
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* ✅ 圖片樣式 */
 .works img.carousel-img {
-  position: absolute;        /* 疊在同一個位置 */
-  top: 0;
-  left: 0;
+  position: absolute;
+  inset: 0;                 /* 代替 top:0; left:0; */
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* 等比例填滿 */
+  object-fit: cover;
   border-radius: 16px;
-  opacity: 0;                /* 預設透明 */
-  transition: opacity 0.6s ease; /* ✅ 平滑淡入淡出 */
+  opacity: 0;
+  transition: opacity 0.6s ease; /* 淡入淡出 */
+  pointer-events: none;          /* 避免隱藏的圖被點到 */
 }
 
 /* ✅ 顯示中的圖片 */
 .works img.carousel-img.active {
-  opacity: 1;                /* 只控制透明度 */
+  opacity: 1;
   z-index: 1;
+  pointer-events: auto;
 }
 
-/* ✅ 滑過時放大效果 */
+/* ✅ 滑過放大 */
 .works img.carousel-img.active:hover {
   transform: scale(1.03);
   transition: transform 0.3s ease, opacity 0.6s ease;
 }
 
-/* ✅ 按鈕樣式 */
+/* ✅ 按鈕區塊 */
 .carousel-controls {
   display: flex;
   justify-content: center;
@@ -190,7 +191,7 @@ section {
 @media (max-width: 768px) {
   .carousel {
     max-width: 100%;
-    aspect-ratio: 4/3;       /* 手機上比例更高 */
+    aspect-ratio: 4/3;       
   }
   .works img.carousel-img {
     border-radius: 12px;

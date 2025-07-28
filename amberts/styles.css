@@ -111,6 +111,7 @@ section {
   margin-bottom: 20px;
 }
 
+/* ✅ 一般靜態圖片 */
 .works img {
   width: 80%;
   max-width: 400px;
@@ -124,7 +125,9 @@ section {
   transform: scale(1.05);
 }
 
-/* 室內作品集滾軸 */
+/* ==============================
+   ✅ 室內作品 Carousel
+================================*/
 
 /* ✅ Carousel 容器 */
 .carousel {
@@ -133,33 +136,37 @@ section {
   margin: 0 auto;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
-  min-height: 200px;          /* ✅ 保證手機版不會高度=0 */
+  min-height: 200px;          /* 手機預防高度=0 */
 }
 
-/* ✅ 桌機版固定比例 16:9 */
+/* ✅ 桌機版固定比例 */
 @media (min-width: 769px) {
   .carousel {
     aspect-ratio: 16 / 9;
-    min-height: auto;         /* 桌機用圖片比例自動撐開 */
+    min-height: auto;
   }
 }
 
 /* ✅ 圖片樣式 */
 .works img.carousel-img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover;          /* ✅ 保持比例填滿 */
   border-radius: 16px;
   opacity: 0;
-  display: none;
-  transition: opacity 0.6s ease;
-  position: relative;         /* ✅ 讓圖片撐開高度 */
+  display: block;
+  position: absolute;         /* 疊在同個位置 */
+  top: 0;
+  left: 0;
+  transition: opacity 0.6s ease; /* ✅ 淡入淡出 */
+  pointer-events: none;       /* 隱藏的圖片不擋點擊 */
 }
 
+/* ✅ 顯示中的圖片 */
 .works img.carousel-img.active {
   opacity: 1;
-  display: block;
   z-index: 1;
+  pointer-events: auto;
 }
 
 /* ✅ 左右箭頭 */
@@ -175,6 +182,7 @@ section {
   font-size: 20px;
   cursor: pointer;
   z-index: 10;
+  transition: background 0.3s ease;
 }
 
 .carousel-btn.prev { left: 12px; }
@@ -186,7 +194,7 @@ section {
 
 /* ✅ Dots */
 .carousel-dots {
-  display: flex !important;    /* ✅ 強制顯示 */
+  display: flex !important;
   justify-content: center;
   gap: 8px;
   position: absolute;
@@ -213,8 +221,8 @@ section {
 /* ✅ 手機版 */
 @media (max-width: 768px) {
   .carousel {
-    aspect-ratio: 4 / 3;       /* ✅ 手機用 4:3 比例 */
-    min-height: 180px;         /* ✅ 避免圖片未載入時變 0 */
+    aspect-ratio: 4 / 3;       /* 手機比例 */
+    min-height: 180px;
   }
   .carousel-btn {
     width: 32px;

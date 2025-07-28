@@ -136,7 +136,7 @@ section {
   margin: 0 auto;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
-  min-height: 200px;
+  min-height: 200px;   /* 防止手機載入時高度=0 */
 }
 
 /* ✅ 桌機版固定 16:9 */
@@ -146,28 +146,28 @@ section {
     min-height: auto;
   }
 
-  /* 📌 桌機時圖片要填滿容器 */
+  /* 桌機時圖片填滿 */
   .works img.carousel-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;         /* ✅ 強制填滿 */
-    object-fit: cover;    /* ✅ 保持比例裁切 */
+    height: 100%;
+    object-fit: cover;
   }
 }
 
-/* ✅ 手機版用自適應高度 */
+/* ✅ 手機版：保持自然比例 */
 @media (max-width: 768px) {
   .carousel {
-    aspect-ratio: auto;   /* ❌ 不固定比例 */
+    aspect-ratio: auto;  /* 不固定比例 */
     min-height: 180px;
   }
 
   .works img.carousel-img {
     position: relative;
     width: 100%;
-    height: auto;         /* ✅ 手機保持自然比例 */
+    height: auto;
     object-fit: contain;
   }
 
@@ -176,13 +176,69 @@ section {
     height: 32px;
     font-size: 16px;
   }
+
+  .carousel-dots .dot {
+    width: 6px;
+    height: 6px;
+  }
 }
 
-/* ✅ 顯示中的圖片 */
+/* ✅ 圖片樣式 */
+.works img.carousel-img {
+  opacity: 0;
+  display: none;
+  border-radius: 16px;
+  transition: opacity 0.6s ease;
+}
+
 .works img.carousel-img.active {
   opacity: 1;
   display: block;
   z-index: 1;
+}
+
+/* ✅ 左右按鈕 */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+/* ✅ Dots */
+.carousel-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 6px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: hotpink;
+  transform: scale(1.2);
 }
 
 /*==============================

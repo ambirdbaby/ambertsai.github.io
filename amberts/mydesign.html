@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -81,7 +81,16 @@
     <div id="interior" class="tab-content active">
       <div class="partofwork">
         <div class="works">
-          <img src="./images/3F-02.png" alt="Interior 01" />
+          <!-- ✅ 插入 Carousel -->
+          <div id="project1" class="carousel">
+            <img src="images/京澄建築/ZC-2F-01.jpg" class="carousel-img active" />
+            <img src="images/京澄建築/ZC-2F-02.jpg" class="carousel-img" />
+            <img src="images/京澄建築/ZC-2F-03.jpg" class="carousel-img" />
+            <div class="carousel-controls">
+              <button onclick="prevImage()">←</button>
+              <button onclick="nextImage()">→</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

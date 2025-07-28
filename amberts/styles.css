@@ -162,14 +162,18 @@ section {
   transition: transform 0.3s ease, opacity 0.6s ease;
 }
 
-/* ✅ 按鈕區塊 */
+/* ✅ 左右兩側按鈕 */
 .carousel-controls {
+  position: absolute;       /* 從 relative 改成 absolute */
+  top: 50%;                 /* 垂直置中 */
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
-  position: relative;
-  z-index: 2;
+  justify-content: space-between;  /* 讓左右兩個按鈕分開 */
+  align-items: center;
+  padding: 0 10px;           /* 與邊界留一點距離 */
+  transform: translateY(-50%);
+  z-index: 3;
 }
 
 .carousel-controls button {

@@ -140,11 +140,9 @@
   function showImage(index) {
     images.forEach((img, i) => {
       if (i === index) {
-        img.classList.add('active');
-        img.style.display = "block";   // ✅ 顯示目前
+        img.classList.add('active');    // ✅ 顯示用 opacity:1
       } else {
-        img.classList.remove('active');
-        img.style.display = "none";    // ✅ 隱藏其他
+        img.classList.remove('active'); // ✅ 其他 opacity:0
       }
     });
   }
@@ -159,7 +157,7 @@
     showImage(currentIndex);
   }
   
-  // 🚀 載入完執行
+  // 🚀 載入時初始化
   window.onload = function () {
     showImage(currentIndex);
   };

@@ -124,16 +124,38 @@ section {
   transform: scale(1.05);
 }
 
-.carousel-img {
-  display: none; /* 預設隱藏所有圖片 */
-  width: 100%;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
-}
+/* 室內作品集滾軸 */
 
-.carousel-img.active {
-  display: block; /* 只顯示 active 的 */
-}
+  .carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .carousel-img {
+    display: none;
+    width: 100%;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-img.active {
+    display: block;
+  }
+
+  .carousel-controls {
+    margin-top: 10px;
+  }
+
+  .carousel-controls button {
+    padding: 5px 10px;
+    border: none;
+    background: #ffcc00;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 
 /*==============================
 =       Introduction Section   =

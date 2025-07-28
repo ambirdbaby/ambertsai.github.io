@@ -142,48 +142,60 @@
 
   let currentIndex = 0;
   const images = document.querySelectorAll('#project1 .carousel-img');
-  
+  const dotsContainer = document.querySelector('#project1 .carousel-dots');
+
+  // 🔵 自動生成小圓點
+  images.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      showImage(currentIndex);
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('#project1 .dot');
+
   function showImage(index) {
     images.forEach((img, i) => {
-      if (i === index) {
-        img.classList.add('active');    // ✅ 顯示用 opacity:1
-      } else {
-        img.classList.remove('active'); // ✅ 其他 opacity:0
-      }
+      img.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
     });
   }
-  
+
   function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     showImage(currentIndex);
   }
-  
+
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
   }
-  
-  // 🚀 載入時初始化
+
   window.onload = function () {
     showImage(currentIndex);
   };
-  
-  // ✅ 觸控滑動事件
+
+  // ✅ 觸控滑動
   let startX = 0;
   const carousel = document.getElementById('project1');
-  
+
   carousel.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
   });
-  
+
   carousel.addEventListener('touchend', (e) => {
     let endX = e.changedTouches[0].clientX;
     let diff = startX - endX;
-  
+
     if (diff > 50) {
-      nextImage(); // 往左滑 → 下一張
+      nextImage();
     } else if (diff < -50) {
-      prevImage(); // 往右滑 → 上一張
+      prevImage();
     }
   });
 

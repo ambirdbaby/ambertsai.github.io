@@ -139,14 +139,13 @@ section {
   min-height: 200px;   /* 防止手機載入時高度=0 */
 }
 
-/* ✅ 桌機版固定 16:9 */
-@media (min-width: 769px) {
+/* ✅ 桌機版固定比例 */
+@media (min-width: 1025px) {   /* 原本 769 改成 1025 */
   .carousel {
     aspect-ratio: 16 / 9;
     min-height: auto;
   }
 
-  /* 桌機時圖片填滿 */
   .works img.carousel-img {
     position: absolute;
     top: 0;
@@ -157,10 +156,10 @@ section {
   }
 }
 
-/* ✅ 手機版：保持自然比例 */
-@media (max-width: 768px) {
+/* ✅ 手機 & 平板版：保持自然比例 */
+@media (max-width: 1024px) {   /* 原本 768 改成 1024 */
   .carousel {
-    aspect-ratio: auto;  /* 不固定比例 */
+    aspect-ratio: auto;
     min-height: 180px;
   }
 

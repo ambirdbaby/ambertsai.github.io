@@ -131,21 +131,28 @@ section {
   position: relative;
   max-width: 90%;
   margin: 0 auto;
+  overflow: hidden;   /* 避免切換時超出容器 */
 }
 
 /* ✅ 圖片樣式 */
 .works img.carousel-img {
-  display: none;                  /* 預設隱藏 */
+  position: absolute;             /* 疊在同一個位置 */
+  top: 0;
+  left: 0;
+  display: block;                 /* 全部都保留在 DOM */
   width: 100%;
-  max-height: 420px;              /* 限制高度避免過長 */
-  object-fit: cover;              /* 等比例裁切 */
+  max-height: 420px;
+  object-fit: cover;
   border-radius: 16px;
-  transition: transform 0.3s ease;
+  opacity: 0;                     /* ✅ 預設透明 */
+  transition: opacity 0.5s ease;  /* ✅ 淡入淡出 */
 }
 
 /* ✅ 顯示中的圖片 */
 .works img.carousel-img.active {
-  display: block;
+  opacity: 1;                     /* ✅ 顯示時淡入 */
+  position: relative;
+  z-index: 1;
 }
 
 /* ✅ 滑過時放大一點 */
@@ -159,6 +166,8 @@ section {
   justify-content: center;
   gap: 12px;
   margin-top: 10px;
+  position: relative;
+  z-index: 2; /* ✅ 按鈕在圖片上層 */
 }
 
 .carousel-controls button {
@@ -182,7 +191,7 @@ section {
     max-width: 100%;
   }
   .carousel-img {
-    max-height: 300px;            /* 手機上縮短高度 */
+    max-height: 300px;
     border-radius: 12px;
   }
   .carousel-controls button {

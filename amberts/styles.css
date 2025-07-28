@@ -186,9 +186,11 @@ section {
   display: flex;
   justify-content: center;
   gap: 8px;
-  position: relative;         /* ✅ 移到圖片外，避免擠壓 */
-  margin-top: 8px;
-  z-index: 5;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
 }
 
 .carousel-dots .dot {

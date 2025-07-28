@@ -133,33 +133,36 @@ section {
   margin: 0 auto;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
+  min-height: 200px;          /* ✅ 保證手機版不會高度=0 */
 }
 
-/* ✅ 桌機版固定 16:9 */
+/* ✅ 桌機版固定比例 16:9 */
 @media (min-width: 769px) {
   .carousel {
     aspect-ratio: 16 / 9;
+    min-height: auto;         /* 桌機用圖片比例自動撐開 */
   }
 }
 
 /* ✅ 圖片樣式 */
 .works img.carousel-img {
   width: 100%;
-  height: auto;                 /* ✅ 手機用圖片比例撐開 */
+  height: auto;
   object-fit: cover;
   border-radius: 16px;
   opacity: 0;
   display: none;
   transition: opacity 0.6s ease;
-  position: relative;           /* ✅ 撐開容器高度 */
+  position: relative;         /* ✅ 讓圖片撐開高度 */
 }
 
 .works img.carousel-img.active {
   opacity: 1;
   display: block;
+  z-index: 1;
 }
 
-/* ✅ 左右兩側箭頭 */
+/* ✅ 左右箭頭 */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -183,7 +186,7 @@ section {
 
 /* ✅ Dots */
 .carousel-dots {
-  display: flex;
+  display: flex !important;    /* ✅ 強制顯示 */
   justify-content: center;
   gap: 8px;
   position: absolute;
@@ -209,6 +212,10 @@ section {
 
 /* ✅ 手機版 */
 @media (max-width: 768px) {
+  .carousel {
+    aspect-ratio: 4 / 3;       /* ✅ 手機用 4:3 比例 */
+    min-height: 180px;         /* ✅ 避免圖片未載入時變 0 */
+  }
   .carousel-btn {
     width: 32px;
     height: 32px;

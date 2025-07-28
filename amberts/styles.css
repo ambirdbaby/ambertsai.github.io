@@ -134,7 +134,7 @@ section {
 }
 
 /* ✅ 圖片樣式 */
-.carousel-img {
+.works img.carousel-img {
   display: none;                  /* 預設隱藏 */
   width: 100%;
   max-height: 420px;              /* 限制高度避免過長 */
@@ -144,7 +144,7 @@ section {
 }
 
 /* ✅ 顯示中的圖片 */
-.carousel-img.active {
+.works img.carousel-img.active {
   display: block;
 }
 

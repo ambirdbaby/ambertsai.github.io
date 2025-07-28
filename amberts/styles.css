@@ -124,6 +124,17 @@ section {
   transform: scale(1.05);
 }
 
+.carousel-img {
+  display: none; /* 預設隱藏所有圖片 */
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-img.active {
+  display: block; /* 只顯示 active 的 */
+}
+
 /*==============================
 =       Introduction Section   =
 ==============================*/

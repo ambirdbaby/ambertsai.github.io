@@ -132,35 +132,30 @@ section {
   max-width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  aspect-ratio: 16/9;        /* 桌面版固定比例 */
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* ✅ 圖片樣式 */
+/* ✅ 圖片樣式：用原比例 */
 .works img.carousel-img {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;               /* ✅ 不強制固定比例 */
+  object-fit: contain;        /* 保持原比例顯示 */
   border-radius: 16px;
   opacity: 0;
   transition: opacity 0.6s ease;
   pointer-events: none;
 }
 
+/* ✅ 顯示的圖片 */
 .works img.carousel-img.active {
   opacity: 1;
   z-index: 1;
   pointer-events: auto;
 }
 
-.works img.carousel-img.active:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease, opacity 0.6s ease;
-}
-
-/* ✅ 左右兩側按鈕 */
+/* ✅ 左右兩側箭頭 */
 .carousel-controls {
   position: absolute;
   top: 50%;
@@ -171,7 +166,7 @@ section {
   align-items: center;
   padding: 0 10px;
   transform: translateY(-50%);
-  z-index: 3;
+  z-index: 10;                /* ✅ 確保箭頭在最上層 */
 }
 
 .carousel-controls button {
@@ -195,8 +190,8 @@ section {
   justify-content: center;
   gap: 8px;
   margin-top: 8px;
-  z-index: 2;
   position: relative;
+  z-index: 5;
 }
 
 .carousel-dots .dot {
@@ -217,17 +212,14 @@ section {
 @media (max-width: 768px) {
   .carousel {
     max-width: 100%;
-    aspect-ratio: 4/3;        /* 只在手機改比例 */
   }
-
+  .works img.carousel-img {
+    border-radius: 12px;
+  }
   .carousel-controls button {
     width: 32px;
     height: 32px;
     font-size: 16px;
-  }
-
-  .works img.carousel-img {
-    border-radius: 12px;
   }
 }
 

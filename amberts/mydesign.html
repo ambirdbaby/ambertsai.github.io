@@ -130,6 +130,32 @@
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
     }
+
+
+    /***室內作品照片滾軸***/
+
+    let currentIndex = 0;
+    const images = document.querySelectorAll('#project1 .carousel-img');
+  
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+  
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+  
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+  
+    // 初始化：只顯示第一張
+    showImage(currentIndex);
+
   </script>
 </body>
 </html>

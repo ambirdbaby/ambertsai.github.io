@@ -133,24 +133,24 @@ section {
   margin: 0 auto;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
+  aspect-ratio: 16 / 9;    /* ✅ 固定比例 */
 }
 
 /* ✅ 圖片樣式 (不壓扁) */
 .works img.carousel-img {
-  position: relative;           /* 改回 relative 讓高度撐開 */
+  position: absolute;      /* 疊在同個容器 */
+  inset: 0;
   width: 100%;
-  height: auto;                 /* 等比例縮放 */
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;        /* ✅ 填滿但保持比例 */
   border-radius: 16px;
   opacity: 0;
   transition: opacity 0.6s ease;
-  display: none;                /* 預設不顯示 */
 }
 
-/* ✅ 顯示的圖片 */
 .works img.carousel-img.active {
   opacity: 1;
-  display: block;               /* 只顯示 active 的 */
+  z-index: 1;
 }
 
 /* ✅ 左右兩側箭頭 */
@@ -165,8 +165,11 @@ section {
   height: 40px;
   font-size: 20px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10;             /* ✅ 確保按鈕在圖片上 */
 }
+
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
@@ -180,9 +183,11 @@ section {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 8px;
-  position: relative;
-  z-index: 5;
+  position: absolute;       /* ✅ 固定在圖片下方 */
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;              /* ✅ 高於圖片 */
 }
 
 .carousel-dots .dot {
@@ -202,12 +207,9 @@ section {
 /* ✅ 手機版 */
 @media (max-width: 768px) {
   .carousel {
-    max-width: 100%;
+    aspect-ratio: 4 / 3;   /* ✅ 手機比例 */
   }
-  .works img.carousel-img {
-    border-radius: 12px;
-  }
-  .carousel-controls button {
+  .carousel-btn {
     width: 32px;
     height: 32px;
     font-size: 16px;

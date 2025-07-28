@@ -131,33 +131,34 @@ section {
   position: relative;
   max-width: 90%;
   margin: 0 auto;
-  overflow: hidden;   /* 避免切換時超出容器 */
+  overflow: hidden;         /* 防止切換時超出 */
+  aspect-ratio: 16/9;       /* ✅ 固定比例，避免高度跳動 */
+  background: rgba(0, 0, 0, 0.05); /* 過渡時有底色 */
 }
 
 /* ✅ 圖片樣式 */
 .works img.carousel-img {
-  position: absolute;             /* 疊在同一個位置 */
+  position: absolute;        /* 疊在同一個位置 */
   top: 0;
   left: 0;
-  display: block;                 /* 全部都保留在 DOM */
   width: 100%;
-  max-height: 420px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover;         /* 等比例填滿 */
   border-radius: 16px;
-  opacity: 0;                     /* ✅ 預設透明 */
-  transition: opacity 0.5s ease;  /* ✅ 淡入淡出 */
+  opacity: 0;                /* 預設透明 */
+  transition: opacity 0.6s ease; /* ✅ 平滑淡入淡出 */
 }
 
 /* ✅ 顯示中的圖片 */
 .works img.carousel-img.active {
-  opacity: 1;                     /* ✅ 顯示時淡入 */
-  position: relative;
+  opacity: 1;                /* 只控制透明度 */
   z-index: 1;
 }
 
-/* ✅ 滑過時放大一點 */
-.carousel-img.active:hover {
+/* ✅ 滑過時放大效果 */
+.works img.carousel-img.active:hover {
   transform: scale(1.03);
+  transition: transform 0.3s ease, opacity 0.6s ease;
 }
 
 /* ✅ 按鈕樣式 */
@@ -167,7 +168,7 @@ section {
   gap: 12px;
   margin-top: 10px;
   position: relative;
-  z-index: 2; /* ✅ 按鈕在圖片上層 */
+  z-index: 2;
 }
 
 .carousel-controls button {
@@ -189,9 +190,9 @@ section {
 @media (max-width: 768px) {
   .carousel {
     max-width: 100%;
+    aspect-ratio: 4/3;       /* 手機上比例更高 */
   }
-  .carousel-img {
-    max-height: 300px;
+  .works img.carousel-img {
     border-radius: 12px;
   }
   .carousel-controls button {

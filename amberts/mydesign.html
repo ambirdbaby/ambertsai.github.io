@@ -136,37 +136,46 @@
 
   let currentIndex = 0;
   const images = document.querySelectorAll('#project1 .carousel-img');
-
+  
   function showImage(index) {
     images.forEach((img, i) => {
-      img.classList.toggle('active', i === index);
+      if (i === index) {
+        img.classList.add('active');
+        img.style.display = "block";   // ✅ 顯示目前
+      } else {
+        img.classList.remove('active');
+        img.style.display = "none";    // ✅ 隱藏其他
+      }
     });
   }
-
+  
   function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     showImage(currentIndex);
   }
-
+  
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
   }
-
-  showImage(currentIndex);
-
+  
+  // 🚀 載入完執行
+  window.onload = function () {
+    showImage(currentIndex);
+  };
+  
   // ✅ 觸控滑動事件
   let startX = 0;
   const carousel = document.getElementById('project1');
-
+  
   carousel.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
   });
-
+  
   carousel.addEventListener('touchend', (e) => {
     let endX = e.changedTouches[0].clientX;
     let diff = startX - endX;
-
+  
     if (diff > 50) {
       nextImage(); // 往左滑 → 下一張
     } else if (diff < -50) {

@@ -150,23 +150,20 @@ section {
 /* ✅ 圖片樣式 */
 .works img.carousel-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;          /* ✅ 保持比例填滿 */
+  height: auto;                /* ✅ 改回自適應高度 */
+  object-fit: cover;
   border-radius: 16px;
   opacity: 0;
-  display: block;
-  position: absolute;         /* 疊在同個位置 */
-  top: 0;
-  left: 0;
-  transition: opacity 0.6s ease; /* ✅ 淡入淡出 */
-  pointer-events: none;       /* 隱藏的圖片不擋點擊 */
+  display: none;               /* ✅ 只有 active 顯示 */
+  transition: opacity 0.6s ease;
+  position: relative;          /* ✅ 讓圖片撐開容器高度 */
 }
 
 /* ✅ 顯示中的圖片 */
 .works img.carousel-img.active {
   opacity: 1;
+  display: block;
   z-index: 1;
-  pointer-events: auto;
 }
 
 /* ✅ 左右箭頭 */
@@ -182,7 +179,6 @@ section {
   font-size: 20px;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.3s ease;
 }
 
 .carousel-btn.prev { left: 12px; }

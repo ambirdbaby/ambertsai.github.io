@@ -253,8 +253,8 @@ section {
 /* 🎨 只影響 3D Design 的圖片 */
 .design-3d .works img {
   display: block;
-  width: 80%;            /* 桌機寬度 */
-  max-width: 600px;
+  width: 90%;            /* 桌機寬度 */
+  max-width: 1000px;
   height: auto;
   margin: 0 auto 20px;
   border-radius: 16px;
@@ -278,6 +278,14 @@ section {
   .design-3d .works img {
     width: 90%;
     max-width: 500px;
+  }
+}
+
+/* 🖥️ 桌機 */
+@media (min-width: 1025px) {
+  .design-3d .works img {
+    width: 85%;
+    max-width: 1000px; /* 讓桌機放到大約 1000px */
   }
 }
 

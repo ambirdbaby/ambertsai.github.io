@@ -104,26 +104,6 @@ section {
   display: block;
 }
 
-/*==============================
-=         Works Image Style    =
-==============================*/
-.works {
-  margin-bottom: 20px;
-}
-
-/* ✅ 一般靜態圖片 */
-.works img {
-  width: 80%;
-  max-width: 400px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
-}
-
-.works img:hover {
-  transform: scale(1.05);
-}
 
 /* ==============================
    ✅ 室內作品 Carousel
@@ -242,6 +222,41 @@ section {
 .carousel-dots .dot.active {
   background: hotpink;
   transform: scale(1.2);
+}
+
+/*==============================
+         ✅ 3D作品
+==============================*/
+
+/* 3D Design 圖片容器 */
+.works-3d img {
+  display: block;
+  width: 80%;            /* 預設佔 80% */
+  max-width: 600px;      /* 桌機最大寬度 */
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.works-3d img:hover {
+  transform: scale(1.05);
+}
+
+/* 手機版：佔滿寬度 */
+@media (max-width: 768px) {
+  .works-3d img {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+/* 平板版：介於手機和桌機之間 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .works-3d img {
+    width: 90%;
+    max-width: 500px;
+  }
 }
 
 /*==============================

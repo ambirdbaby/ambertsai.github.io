@@ -172,11 +172,11 @@ section {
   }
 
   .works img.carousel-img {
-    width: auto;                /* ✅ 不強制滿寬 */
+    width: auto;                /* ✅ 以原尺寸為優先 */
+    height: auto;
     max-width: 100%;            /* ✅ 不超過容器 */
-    height: auto;               /* ✅ 保持原比例 */
-    max-height: 70vh;           /* ✅ 限制螢幕高度 */
-    object-fit: scale-down;     /* ✅ 原尺寸，不會被放大 */
+    max-height: 60vh;           /* ✅ 限制高度避免太長 */
+    object-fit: scale-down;     /* ✅ 原尺寸優先，不放大 */
     margin: auto;
     display: block;
   }

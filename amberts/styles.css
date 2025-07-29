@@ -138,20 +138,22 @@ section {
    💻 桌機版
 ================================*/
 @media (min-width: 1025px) {
-  .carousel {
-    aspect-ratio: auto;
-    background-color: rgb(255, 183, 0);
-    padding: 10px 0;
-  }
-
   .works img.carousel-img {
-    width: auto !important;
-    max-width: 100%;
+    width: 90%;                 /* ✅ 圖片不要滿版 */
+    max-width: 1400px;          /* ✅ 最大寬度 */
     height: auto !important;
-    max-height: 80vh;
+    max-height: 75vh;           /* ✅ 限制不超過螢幕 75% 高度 */
     object-fit: contain;
     margin: 0 auto;
+    display: block;
     position: relative !important;
+    border-radius: 16px;
+  }
+
+  .carousel {
+    max-width: 95%;             /* ✅ Carousel 容器本身不要滿版 */
+    padding: 10px 0;
+    background-color: rgb(255, 183, 0);
   }
 }
 

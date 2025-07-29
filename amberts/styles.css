@@ -166,13 +166,17 @@ section {
     background-color: rgb(255, 183, 0);
     border-radius: 16px;
     padding: 8px 0;
+    display: flex;
+    justify-content: center;    /* ✅ 置中 */
+    align-items: center;
   }
 
   .works img.carousel-img {
-    width: 100%;              /* ✅ 改回 100% 寬度 */
-    height: auto;             /* ✅ 讓高度自適應 */
-    max-height: 60vh;         /* ✅ 限制高度不超過螢幕 60% */
-    object-fit: contain;      /* ✅ 避免裁切 */
+    width: 100%;               /* ✅ 先填滿容器寬度 */
+    height: auto;
+    max-width: 100%;           /* ✅ 避免超過螢幕 */
+    max-height: 60vh;          /* ✅ 限制高度 */
+    object-fit: contain;       /* ✅ 保持完整比例 */
     margin: 0 auto;
     display: block;
     border-radius: 16px;

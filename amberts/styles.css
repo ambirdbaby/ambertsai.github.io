@@ -139,7 +139,7 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    max-width: 80%;             /* ✅ 整個 carousel 不滿版 */
+    max-width: 60%;             /* ✅ 整個 carousel 不滿版 */
     margin: 0 auto;
     background-color: rgb(255, 183, 0);
     border-radius: 16px;         /* ✅ 容器圓角 */
@@ -148,7 +148,7 @@ section {
   }
 
   .works img.carousel-img {
-    max-width: 85%;              /* ✅ 圖片寬度限制 */
+    max-width: 100%;              /* ✅ 圖片寬度限制 */
     height: auto;
     max-height: 70vh;
     object-fit: contain;

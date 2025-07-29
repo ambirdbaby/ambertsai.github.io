@@ -144,7 +144,6 @@ section {
   .carousel {
     aspect-ratio: auto;           /* ✅ 取消固定 16:9 */
     min-height: auto;
-    background-color: #fff;       /* ✅ 給容器白底避免黃底 */
     padding: 10px 0;              /* ✅ 上下留點空間 */
   }
 

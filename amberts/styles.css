@@ -169,11 +169,11 @@ section {
   }
 
   .works img.carousel-img {
-    max-width: 100%;          /* ✅ 不強制寬度 100%，保持比例 */
-    width: auto;              /* ✅ 讓圖片依比例縮放 */
+    width: auto;               /* ✅ 不固定寬度 */
+    max-width: 100%;           /* ✅ 保持不超過容器 */
     height: auto;
-    max-height: 65vh;         /* ✅ 限制高度不超過螢幕 65% */
-    object-fit: contain;
+    max-height: 60vh;          /* ✅ 限制不超過螢幕 60% 高度 */
+    object-fit: contain;       /* ✅ 避免裁切 */
     margin: 0 auto;
     display: block;
   }

@@ -169,13 +169,13 @@ section {
   }
 
   .works img.carousel-img {
-    width: auto;               /* ✅ 不固定寬度 */
-    max-width: 100%;           /* ✅ 保持不超過容器 */
-    height: auto;
-    max-height: 60vh;          /* ✅ 限制不超過螢幕 60% 高度 */
-    object-fit: contain;       /* ✅ 避免裁切 */
+    width: 100%;              /* ✅ 改回 100% 寬度 */
+    height: auto;             /* ✅ 讓高度自適應 */
+    max-height: 60vh;         /* ✅ 限制高度不超過螢幕 60% */
+    object-fit: contain;      /* ✅ 避免裁切 */
     margin: 0 auto;
     display: block;
+    border-radius: 16px;
   }
 }
 

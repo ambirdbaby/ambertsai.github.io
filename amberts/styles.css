@@ -225,6 +225,27 @@ section {
   transform: scale(1.2);
 }
 
+/* ✅ Description */
+.carousel-description {
+  margin-top: 12px;
+  text-align: center;
+  color: white;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 14px;
+  opacity: 0.9;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+@media (min-width: 1025px) {
+  .carousel-description {
+    font-size: 16px;
+    max-width: 70%;
+  }
+}
+
 /*==============================
          ✅ 3D作品
 ==============================*/

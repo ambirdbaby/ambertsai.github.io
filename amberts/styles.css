@@ -159,11 +159,21 @@ section {
    📱 手機 & 平板版
 ================================*/
 @media (max-width: 1024px) {
+  .carousel {
+    max-width: 95%;              /* ✅ 留白避免貼邊 */
+    background-color: rgb(255, 183, 0);
+    border-radius: 16px;
+    padding: 8px 0;              /* ✅ 避免圖片貼邊 */
+  }
+
   .works img.carousel-img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: auto;                /* ✅ 避免固定高度 */
+    max-height: 80vh;            /* ✅ 限制不超過螢幕高度 */
+    object-fit: contain;         /* ✅ 保持比例不裁切 */
     position: relative;
+    margin: 0 auto;
+    display: block;
   }
 }
 

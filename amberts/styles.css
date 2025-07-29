@@ -138,22 +138,24 @@ section {
    💻 桌機版
 ================================*/
 @media (min-width: 1025px) {
-  .works img.carousel-img {
-    width: 90%;                 /* ✅ 圖片不要滿版 */
-    max-width: 1400px;          /* ✅ 最大寬度 */
-    height: auto !important;
-    max-height: 75vh;           /* ✅ 限制不超過螢幕 75% 高度 */
-    object-fit: contain;
-    margin: 0 auto;
-    display: block;
-    position: relative !important;
+  .carousel {
+    max-width: 90%;
+    background-color: rgb(255, 183, 0);
     border-radius: 16px;
+    padding: 10px 0;
+    margin: 0 auto;
+    overflow: hidden;
   }
 
-  .carousel {
-    max-width: 95%;             /* ✅ Carousel 容器本身不要滿版 */
-    padding: 10px 0;
-    background-color: rgb(255, 183, 0);
+  .works img.carousel-img {
+    width: auto;                 /* ✅ 不固定寬度 */
+    max-width: 80%;              /* ✅ 圖片不會滿版 */
+    height: auto;
+    max-height: 70vh;            /* ✅ 不超過螢幕 70% 高 */
+    object-fit: contain;         /* ✅ 保持比例 */
+    margin: 0 auto;
+    border-radius: 16px;
+    display: block;
   }
 }
 
@@ -162,29 +164,28 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    width: 95%;                  /* ✅ 保留一點邊距，圓角才有空間顯示 */
+    width: 95%;
     max-width: 95%;
     background-color: rgb(255, 183, 0);
-    border-radius: 16px;         /* ✅ 手機版也有圓角 */
+    border-radius: 16px;
     padding: 0;
     margin: 0 auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;            /* ✅ 避免圖片超出圓角 */
   }
 
   .works img.carousel-img {
-    width: 100%;                 /* ✅ 圖片自適應寬度 */
-    height: auto;                /* ✅ 自動高度保持比例 */
-    max-height: 80vh;            /* ✅ 避免過高 */
-    object-fit: contain;         /* ✅ 不裁切，保持完整圖片 */
-    border-radius: 16px;         /* ✅ 圖片也跟著圓角 */
+    width: 100%;                 /* ✅ 撐滿手機寬 */
+    height: auto;                /* ✅ 保持比例 */
+    max-height: 65vh;            /* ✅ 避免過長 */
+    object-fit: contain;         /* ✅ 不裁切，保持原比例 */
+    border-radius: 16px;
     margin: 0 auto;
     display: block;
   }
 }
-
 /* ==============================
    ⬅️➡️ 左右按鈕
 ================================*/

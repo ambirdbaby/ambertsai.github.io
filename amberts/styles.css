@@ -162,18 +162,18 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    max-width: 95%;              /* ✅ 留白避免貼邊 */
+    max-width: 95%;
     background-color: rgb(255, 183, 0);
     border-radius: 16px;
-    padding: 8px 0;              /* ✅ 避免圖片貼邊 */
+    padding: 8px 0;
   }
 
   .works img.carousel-img {
-    width: 100%;
-    height: auto;                /* ✅ 避免固定高度 */
-    max-height: 80vh;            /* ✅ 限制不超過螢幕高度 */
-    object-fit: contain;         /* ✅ 保持比例不裁切 */
-    position: relative;
+    max-width: 100%;          /* ✅ 不強制寬度 100%，保持比例 */
+    width: auto;              /* ✅ 讓圖片依比例縮放 */
+    height: auto;
+    max-height: 65vh;         /* ✅ 限制高度不超過螢幕 65% */
+    object-fit: contain;
     margin: 0 auto;
     display: block;
   }

@@ -116,7 +116,22 @@ section {
   margin: 0 auto;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
-  min-height: 200px;   /* 防止載入時高度=0 */
+  min-height: 200px; /* 防止載入時高度=0 */
+  border-radius: 16px;
+}
+
+/* 🎨 圖片預設隱藏 */
+.carousel-img {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  border-radius: 16px;
+}
+
+/* ✅ 只有 active 的顯示 */
+.carousel-img.active {
+  display: block;
+  opacity: 1;
 }
 
 /* ==============================
@@ -124,21 +139,20 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    aspect-ratio: auto;           /* 取消固定 16:9 */
-    min-height: auto;
-    background-color: rgb(255, 183, 0);  
-    padding: 10px 0;              /* 上下留白 */
+    aspect-ratio: auto;
+    background-color: rgb(255, 183, 0);
+    padding: 10px 0;
   }
 
   .works img.carousel-img {
-    position: relative !important;   /* 取消絕對定位 */
     width: auto !important;
     max-width: 100%;
     height: auto !important;
-    max-height: 80vh;                /* 限制不超過螢幕高度 */
-    object-fit: contain !important;  /* 完整顯示圖片 */
+    max-height: 80vh;
+    object-fit: contain;
     margin: 0 auto;
     display: block;
+    position: relative !important;
   }
 }
 
@@ -146,45 +160,12 @@ section {
    📱 手機 & 平板版
 ================================*/
 @media (max-width: 1024px) {
-  .carousel {
-    aspect-ratio: auto;
-    min-height: 180px;
-    background-color: rgb(255, 183, 0);  
-  }
-
   .works img.carousel-img {
-    position: relative;
     width: 100%;
     height: auto;
     object-fit: contain;
+    position: relative;
   }
-
-  .carousel-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-  }
-
-  .carousel-dots .dot {
-    width: 6px;
-    height: 6px;
-  }
-}
-
-/* ==============================
-   🖼️ 圖片切換效果
-================================*/
-.works img.carousel-img {
-  opacity: 0;
-  display: none;
-  border-radius: 16px;
-  transition: opacity 0.6s ease;
-}
-
-.works img.carousel-img.active {
-  opacity: 1;
-  display: block;
-  z-index: 1;
 }
 
 /* ==============================
@@ -272,13 +253,11 @@ section {
 }
 
 /*==============================
-         ✅ 3D作品
+   ✅ 3D作品
 ==============================*/
-
-/* 🎨 只影響 3D Design 的圖片 */
 .design-3d .works img {
   display: block;
-  width: 90%;            /* 桌機寬度 */
+  width: 90%;
   max-width: 1000px;
   height: auto;
   margin: 0 auto 20px;
@@ -290,7 +269,6 @@ section {
   transform: scale(1.05);
 }
 
-/* 📱 手機版：寬度更大 */
 @media (max-width: 768px) {
   .design-3d .works img {
     width: 95%;
@@ -298,7 +276,6 @@ section {
   }
 }
 
-/* 📟 平板：中間尺寸 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .design-3d .works img {
     width: 90%;
@@ -306,11 +283,10 @@ section {
   }
 }
 
-/* 🖥️ 桌機 */
 @media (min-width: 1025px) {
   .design-3d .works img {
     width: 85%;
-    max-width: 1000px; /* 讓桌機放到大約 1000px */
+    max-width: 1000px;
   }
 }
 

@@ -145,6 +145,7 @@ section {
   .carousel {
     aspect-ratio: auto;
     min-height: 180px;
+    background-color: rgb(255, 183, 0);  
   }
 
   .works img.carousel-img {

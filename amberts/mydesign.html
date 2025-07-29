@@ -82,7 +82,7 @@
       <div class="partofwork">
         <div class="works">
     
-          <!-- ✅ Carousel -->
+          <!-- 第一組 Carousel -->
           <div id="project1" class="carousel">
             <img src="images/京澄建築/ZC-2F-01.jpg" class="carousel-img active" />
             <img src="images/京澄建築/ZC-2F-02.jpg" class="carousel-img" />
@@ -96,12 +96,25 @@
             <img src="images/京澄建築/ZC-6F-03.jpg" class="carousel-img" />
     
             <!-- 左右兩側按鈕 -->
-            <button class="carousel-btn prev" onclick="prevImage()">←</button>
-            <button class="carousel-btn next" onclick="nextImage()">→</button>
-    
-            <!-- ✅ 小圓點 -->
+            <button class="carousel-btn prev" onclick="prevImage('project1')">←</button>
+            <button class="carousel-btn next" onclick="nextImage('project1')">→</button>
             <div class="carousel-dots"></div>
-          </div> <!-- ✅ 關閉 Carousel -->
+         </div>
+
+            <!-- 第二組 Carousel -->
+          <div id="project2" class="carousel">
+            <img src="images/永陞鳳翎/ys-01.jpg" class="carousel-img active" />
+            <img src="images/永陞鳳翎/ys-02.jpg" class="carousel-img" />
+            <img src="images/永陞鳳翎/ys-03.jpg" class="carousel-img" />
+            <img src="images/永陞鳳翎/ys-04.jpg" class="carousel-img" />
+            <img src="images/永陞鳳翎/ys-05.jpg" class="carousel-img" />
+            <img src="images/永陞鳳翎/ys-06.jpg" class="carousel-img" />
+          
+            <button class="carousel-btn prev" onclick="prevImage('project2')">←</button>
+            <button class="carousel-btn next" onclick="nextImage('project2')">→</button>
+            <div class="carousel-dots"></div>
+          </div>
+
         </div> <!-- ✅ 關閉 works -->
       </div> <!-- ✅ 關閉 partofwork -->
     </div> <!-- ✅ 關閉 interior -->
@@ -128,84 +141,90 @@
     </div>
   </main>
 
+
+
+  
   <!-- Disable right-click -->
-  <script>
-    document.oncontextmenu = () => false;
+<script>
+document.oncontextmenu = () => false;
 
-  function showTab(event, tabId) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const links = document.querySelectorAll('.tab-link');
-  
-    tabs.forEach(t => t.classList.remove('active'));
-    links.forEach(l => l.classList.remove('active'));
-  
-    document.getElementById(tabId).classList.add('active');
-    event.target.classList.add('active');
-  }
+function showTab(event, tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const links = document.querySelectorAll('.tab-link');
 
+  tabs.forEach(t => t.classList.remove('active'));
+  links.forEach(l => l.classList.remove('active'));
 
-    /***室內作品照片滾軸***/
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
 
-let currentIndex = 0;
-const images = document.querySelectorAll('#project1 .carousel-img');
-const dotsContainer = document.querySelector('#project1 .carousel-dots'); // ✅ 抓 dots 容器
+/*** ✅ 多組 Carousel 支援 ***/
+let carousels = {};
 
-if (dotsContainer) {
+function initCarousel(id) {
+  const images = document.querySelectorAll(`#${id} .carousel-img`);
+  const dotsContainer = document.querySelector(`#${id} .carousel-dots`);
+  let currentIndex = 0;
+
+  // 生成小圓點
   images.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
     dot.addEventListener('click', () => {
-      currentIndex = i;
-      showImage(currentIndex);
+      carousels[id].currentIndex = i;
+      showImage(id, i);
     });
     dotsContainer.appendChild(dot);
   });
-}
 
-const dots = document.querySelectorAll('#project1 .dot');
+  carousels[id] = {
+    images,
+    dots: dotsContainer.children,
+    currentIndex
+  };
 
-function showImage(index) {
-  images.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
-  });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-}
-
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
-}
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
-}
-
-window.onload = function () {
-  showImage(currentIndex);
-};
+  showImage(id, currentIndex);
 
   // ✅ 觸控滑動
+  const carouselEl = document.getElementById(id);
   let startX = 0;
-  const carousel = document.getElementById('project1');
 
-  carousel.addEventListener('touchstart', (e) => {
+  carouselEl.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
   });
 
-  carousel.addEventListener('touchend', (e) => {
+  carouselEl.addEventListener('touchend', (e) => {
     let endX = e.changedTouches[0].clientX;
     let diff = startX - endX;
-
-    if (diff > 50) {
-      nextImage();
-    } else if (diff < -50) {
-      prevImage();
-    }
+    if (diff > 50) nextImage(id);
+    else if (diff < -50) prevImage(id);
   });
+}
 
-  </script>
+function showImage(id, index) {
+  const { images, dots } = carousels[id];
+  images.forEach((img, i) => img.classList.toggle('active', i === index));
+  Array.from(dots).forEach((dot, i) => dot.classList.toggle('active', i === index));
+}
+
+function prevImage(id) {
+  const c = carousels[id];
+  c.currentIndex = (c.currentIndex - 1 + c.images.length) % c.images.length;
+  showImage(id, c.currentIndex);
+}
+
+function nextImage(id) {
+  const c = carousels[id];
+  c.currentIndex = (c.currentIndex + 1) % c.images.length;
+  showImage(id, c.currentIndex);
+}
+
+// ✅ 啟動多個 Carousel
+window.onload = function () {
+  initCarousel('project1');
+  initCarousel('project2');  // 🔥 第二組記得呼叫
+};
+</script>
 </body>
 </html>

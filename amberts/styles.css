@@ -141,15 +141,21 @@ section {
 
 /* ✅ 桌機版固定比例 */
 @media (min-width: 1025px) {
+  .carousel {
+    aspect-ratio: auto;           /* ✅ 取消固定 16:9 */
+    min-height: auto;
+    background-color: #fff;       /* ✅ 給容器白底避免黃底 */
+    padding: 10px 0;              /* ✅ 上下留點空間 */
+  }
+
   .works img.carousel-img {
-    position: relative;        /* ✅ 取消絕對定位 */
-    top: auto;
-    left: auto;
-    transform: none;           /* ✅ 移除置中用 transform */
-    width: 100%;
-    height: auto;              /* ✅ 讓高度自適應 */
-    object-fit: contain;       /* ✅ 完整顯示圖片 */
-    margin: 0 auto;            /* ✅ 置中 */
+    position: relative !important;   /* ✅ 強制取消絕對定位 */
+    width: auto !important;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 80vh;                /* ✅ 限制不超過螢幕高度 */
+    object-fit: contain !important;  /* ✅ 完整顯示圖片 */
+    margin: 0 auto;
     display: block;
   }
 }

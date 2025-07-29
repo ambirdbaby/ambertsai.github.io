@@ -169,19 +169,16 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* ✅ 固定比例避免初始化撐爆 */
-    aspect-ratio: 3 / 4;           /* 你可以改 4/3、16/9 視圖片比例 */
   }
 
   .works img.carousel-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;           /* ✅ 永遠完整顯示 */
-    max-height: 100%;              /* ✅ 避免超過容器 */
+    width: auto;                /* ✅ 不強制滿寬 */
+    max-width: 100%;            /* ✅ 不超過容器 */
+    height: auto;               /* ✅ 保持原比例 */
+    max-height: 70vh;           /* ✅ 限制螢幕高度 */
+    object-fit: scale-down;     /* ✅ 原尺寸，不會被放大 */
     margin: auto;
     display: block;
-    border-radius: 16px;
   }
 }
 

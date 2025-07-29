@@ -139,23 +139,21 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    max-width: 65%;             /* ✅ 整個 carousel 不滿版 */
-    margin: 0 auto;
-    background-color: rgb(255, 183, 0);
-    border-radius: 16px;         /* ✅ 容器圓角 */
-    padding: 10px 0;
-    overflow: hidden;            /* ✅ 強制裁切內容，確保圓角 */
+    aspect-ratio: auto;           /* ✅ 取消固定 16:9 */
+    min-height: auto;
+    background-color: rgb(255, 183, 0);  
+    padding: 10px 0;              /* ✅ 上下留點空間 */
   }
 
   .works img.carousel-img {
-    width: 100%;
-    height: auto;
-    max-height: auto;
-    object-fit: contain;
+    position: relative !important;   /* ✅ 強制取消絕對定位 */
+    width: auto !important;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 80vh;                /* ✅ 限制不超過螢幕高度 */
+    object-fit: contain !important;  /* ✅ 完整顯示圖片 */
     margin: 0 auto;
     display: block;
-    border-radius: 16px;          /* ✅ 圖片也有圓角 */
-    box-sizing: border-box;
   }
 }
 

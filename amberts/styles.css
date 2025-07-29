@@ -228,32 +228,32 @@ section {
          ✅ 3D作品
 ==============================*/
 
-/* 3D Design 圖片容器 */
-.works-3d img {
+/* 🎨 只影響 3D Design 的圖片 */
+.design-3d .works img {
   display: block;
-  width: 80%;            /* 預設佔 80% */
-  max-width: 600px;      /* 桌機最大寬度 */
+  width: 80%;            /* 桌機寬度 */
+  max-width: 600px;
   height: auto;
   margin: 0 auto 20px;
   border-radius: 16px;
   transition: transform 0.3s ease;
 }
 
-.works-3d img:hover {
+.design-3d .works img:hover {
   transform: scale(1.05);
 }
 
-/* 手機版：佔滿寬度 */
+/* 📱 手機版：寬度更大 */
 @media (max-width: 768px) {
-  .works-3d img {
+  .design-3d .works img {
     width: 95%;
     max-width: none;
   }
 }
 
-/* 平板版：介於手機和桌機之間 */
+/* 📟 平板：中間尺寸 */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .works-3d img {
+  .design-3d .works img {
     width: 90%;
     max-width: 500px;
   }

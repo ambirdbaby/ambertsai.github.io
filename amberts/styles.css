@@ -130,7 +130,7 @@ section {
 
 /* ✅ 只有 active 的顯示 */
 .carousel-img.active {
-  display: block;
+  display: block !important; 
   opacity: 1;
 }
 
@@ -151,7 +151,6 @@ section {
     max-height: 80vh;
     object-fit: contain;
     margin: 0 auto;
-    display: block;
     position: relative !important;
   }
 }

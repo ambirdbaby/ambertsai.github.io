@@ -253,8 +253,8 @@ section {
 /* 🎨 只影響 3D Design 的圖片 */
 .design-3d .works img {
   display: block;
-  width: 60%;            /* 桌機寬度 */
-  max-width: 500px;
+  width: 80%;            /* 桌機寬度 */
+  max-width: 600px;
   height: auto;
   margin: 0 auto 20px;
   border-radius: 16px;

@@ -105,6 +105,10 @@ section {
 }
 
 
+/* ==============================
+   ✅ 室內作品 Carousel
+================================*/
+
 /* 🎠 Carousel 容器 */
 .carousel {
   position: relative;
@@ -126,46 +130,39 @@ section {
 
 /* ✅ 只有 active 的顯示 */
 .carousel-img.active {
-  display: block !important;
+  display: block !important; 
   opacity: 1;
 }
 
-/* ✅ 桌機版：跟 3D 作品一樣 */
+/* ==============================
+   💻 桌機版
+================================*/
 @media (min-width: 1025px) {
-  .works img.carousel-img {
-    display: block;
-    width: 85%;                /* ✅ 桌機寬度 */
-    max-width: 1000px;         /* ✅ 最大寬度 */
-    height: auto;
-    margin: 0 auto;
-    border-radius: 16px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-
   .carousel {
-    max-width: 95%;
-    background-color: rgb(255, 183, 0);
-    border-radius: 16px;
-    padding: 10px 0;
-    overflow: hidden;
-  }
-}
-
-/* ✅ 平板版：跟 3D 作品一樣 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .works img.carousel-img {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
+    max-width: 65%;             /* ✅ 整個 carousel 不滿版 */
     margin: 0 auto;
-    border-radius: 16px;
+    background-color: rgb(255, 183, 0);
+    border-radius: 16px;         /* ✅ 容器圓角 */
+    padding: 10px 0;
+    overflow: hidden;            /* ✅ 強制裁切內容，確保圓角 */
+  }
+
+  .works img.carousel-img {
+    width: 100%;
+    height: auto;
+    max-height: auto;
     object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;          /* ✅ 圖片也有圓角 */
+    box-sizing: border-box;
   }
 }
 
-/* ✅ 手機版：跟 3D 作品一樣 */
-@media (max-width: 768px) {
+/* ==============================
+   📱 手機 & 平板版
+================================*/
+@media (max-width: 1024px) {
   .carousel {
     width: 95%;
     max-width: 95%;
@@ -180,16 +177,15 @@ section {
   }
 
   .works img.carousel-img {
-    width: 95%;                /* ✅ 手機跟 3D 一樣比例 */
-    max-width: none;
-    height: auto;
-    max-height: 80vh;
-    margin: 0 auto;
+    width: 100%;                 /* ✅ 撐滿手機寬 */
+    height: auto;                /* ✅ 保持比例 */
+    max-height: 65vh;            /* ✅ 避免過長 */
+    object-fit: contain;         /* ✅ 不裁切，保持原比例 */
     border-radius: 16px;
-    object-fit: contain;
+    margin: 0 auto;
+    display: block;
   }
 }
-
 /* ==============================
    ⬅️➡️ 左右按鈕
 ================================*/
@@ -271,6 +267,44 @@ section {
 @media (min-width: 1025px) {
   .carousel-container {
     margin-bottom: 70px;
+  }
+}
+
+/*==============================
+   ✅ 3D作品
+==============================*/
+.design-3d .works img {
+  display: block;
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.design-3d .works img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .design-3d .works img {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .design-3d .works img {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .design-3d .works img {
+    width: 85%;
+    max-width: 1000px;
   }
 }
 

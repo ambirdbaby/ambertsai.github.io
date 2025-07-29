@@ -109,39 +109,43 @@ section {
    ✅ 室內作品 Carousel
 ================================*/
 
-/* ✅ Carousel 容器 */
+/* 🎠 Carousel 容器 */
 .carousel {
   position: relative;
   max-width: 90%;
   margin: 0 auto;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.05);
-  min-height: 200px;   /* 防止手機載入時高度=0 */
+  min-height: 200px;   /* 防止載入時高度=0 */
 }
 
-/* ✅ 桌機版固定比例 */
+/* ==============================
+   💻 桌機版
+================================*/
 @media (min-width: 1025px) {
   .carousel {
-    aspect-ratio: auto;           /* ✅ 取消固定 16:9 */
+    aspect-ratio: auto;           /* 取消固定 16:9 */
     min-height: auto;
     background-color: rgb(255, 183, 0);  
-    padding: 10px 0;              /* ✅ 上下留點空間 */
+    padding: 10px 0;              /* 上下留白 */
   }
 
   .works img.carousel-img {
-    position: relative !important;   /* ✅ 強制取消絕對定位 */
+    position: relative !important;   /* 取消絕對定位 */
     width: auto !important;
     max-width: 100%;
     height: auto !important;
-    max-height: 80vh;                /* ✅ 限制不超過螢幕高度 */
-    object-fit: contain !important;  /* ✅ 完整顯示圖片 */
+    max-height: 80vh;                /* 限制不超過螢幕高度 */
+    object-fit: contain !important;  /* 完整顯示圖片 */
     margin: 0 auto;
     display: block;
   }
 }
 
-/* ✅ 手機 & 平板版：保持自然比例 */
-@media (max-width: 1024px) {   /* 原本 768 改成 1024 */
+/* ==============================
+   📱 手機 & 平板版
+================================*/
+@media (max-width: 1024px) {
   .carousel {
     aspect-ratio: auto;
     min-height: 180px;
@@ -167,7 +171,9 @@ section {
   }
 }
 
-/* ✅ 圖片樣式 */
+/* ==============================
+   🖼️ 圖片切換效果
+================================*/
 .works img.carousel-img {
   opacity: 0;
   display: none;
@@ -181,7 +187,9 @@ section {
   z-index: 1;
 }
 
-/* ✅ 左右按鈕 */
+/* ==============================
+   ⬅️➡️ 左右按鈕
+================================*/
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -199,7 +207,9 @@ section {
 .carousel-btn.prev { left: 12px; }
 .carousel-btn.next { right: 12px; }
 
-/* ✅ Dots */
+/* ==============================
+   🔵 Dots
+================================*/
 .carousel-dots {
   display: flex !important;
   justify-content: center;
@@ -225,7 +235,9 @@ section {
   transform: scale(1.2);
 }
 
-/* ✅ Description */
+/* ==============================
+   📝 介紹文字
+================================*/
 .carousel-description {
   margin-top: 12px;
   text-align: center;
@@ -243,6 +255,19 @@ section {
   .carousel-description {
     font-size: 16px;
     max-width: 70%;
+  }
+}
+
+/* ==============================
+   📏 作品間距
+================================*/
+.carousel-container {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1025px) {
+  .carousel-container {
+    margin-bottom: 70px;
   }
 }
 

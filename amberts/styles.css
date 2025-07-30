@@ -136,19 +136,23 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    width: 70%;              /* ✅ 縮小整體容器 */
-    max-width: 1000px;
+    display: inline-block;     /* ✅ 容器寬度跟內容走 */
+    background-color: rgb(255, 183, 0);
+    border-radius: 16px;
     padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
   }
 
   .carousel img.carousel-img {
-    width: 80%;              /* ✅ 圖片只佔容器 80%，跟 3D 作品一致 */
+    width: 80%;                /* ✅ 圖片縮小 */
     max-width: 900px;
     height: auto;
     object-fit: contain;
-    margin: 0 auto;
-    display: block;
     border-radius: 16px;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -157,16 +161,18 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    width: 95%;              /* ✅ 留白，圓角可見 */
+    display: inline-block;     /* ✅ 容器寬度 = 圖片寬度 */
     max-width: 95%;
-    padding: 0;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: rgb(255, 183, 0);
   }
 
   .carousel img.carousel-img {
-    width: 100%;             /* ✅ 撐滿容器寬度 */
+    width: 100%;
     height: auto;
-    object-fit: contain;     /* ✅ 不裁切 */
-    max-height: 70vh;
+    object-fit: contain;
     border-radius: 16px;
     display: block;
     margin: 0 auto;

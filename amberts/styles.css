@@ -113,7 +113,7 @@ section {
 .carousel {
   position: relative;
   margin: 0 auto;
-  display: inline-block;       /* ✅ 容器高度跟著圖片走 */
+  display: inline-block;         /* ✅ 容器寬高跟著圖片 */
   overflow: hidden;
   border-radius: 16px;
   background-color: rgb(255, 183, 0);
@@ -123,13 +123,20 @@ section {
 
 /* 🎨 圖片通用 */
 .carousel-img {
-  display: none;
+  position: absolute;            /* ✅ 疊在同一層，不會一張張排列 */
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;                 /* 預設不顯示、不佔空間 */
   opacity: 0;
   transition: opacity 0.6s ease;
   border-radius: 16px;
+  max-width: 100%;
 }
 
 .carousel-img.active {
+  position: relative;            /* ✅ 只有 active 的才佔空間 */
   display: block !important;
   opacity: 1;
 }
@@ -139,12 +146,11 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel img.carousel-img {
-    width: 75%;                /* ✅ 圖片寬度縮到 75% */
-    max-width: 900px;           /* ✅ 最大不超過 900px */
+    width: 75%;                  /* ✅ 寬度縮小 */
+    max-width: 900px;
     height: auto;
     object-fit: contain;
     border-radius: 16px;
-    display: block;
     margin: 0 auto;
   }
 }
@@ -159,15 +165,14 @@ section {
     border-radius: 16px;
     overflow: hidden;
     background-color: rgb(255, 183, 0);
-    display: inline-block;     /* ✅ 自動跟著圖片縮放 */
+    display: inline-block;
   }
 
   .carousel img.carousel-img {
-    width: 100%;               /* ✅ 撐滿手機寬度 */
-    height: auto;              /* ✅ 保持比例 */
+    width: 100%;
+    height: auto;
     object-fit: contain;
     border-radius: 16px;
-    display: block;
     margin: 0 auto;
   }
 }

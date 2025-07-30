@@ -138,21 +138,26 @@ section {
    💻 桌機版
 ================================*/
 @media (min-width: 1025px) {
-  .works img.carousel-img {
-    width: 60%;
-    max-width: 1000px;          /* ✅ 限制最大寬度 */
-    height: auto !important;
-    max-height: 50vh;           /* ✅ 限制高度更低，避免太佔畫面 */
-    object-fit: contain;
-    margin: 0 auto;
-    display: block;
+  .carousel {
+    width: 75%;                  /* ✅ 整體縮小 */
+    max-width: 1000px;           /* ✅ 限制最大寬度 */
+    background-color: rgb(255, 183, 0);
     border-radius: 16px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;            /* ✅ 避免超出圓角 */
+    display: inline-block;       /* ✅ 高度跟著圖片 */
+    text-align: center;
   }
 
-  .carousel {
-    max-width: 70%;             /* ✅ Carousel 容器也一起縮小 */
-    padding: 10px 0;
-    background-color: rgb(255, 183, 0);
+  .works img.carousel-img {
+    width: 100%;                 /* ✅ 撐滿 carousel 寬度 */
+    height: auto;                /* ✅ 保持原比例 */
+    max-height: 65vh;            /* ✅ 避免太高 */
+    object-fit: contain;         /* ✅ 不裁切 */
+    border-radius: 16px;         /* ✅ 圖片也跟著圓角 */
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -162,22 +167,22 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    width: 95%;
-    max-width: 95%;
+    width: 90%;                     /* ✅ 整體再縮小一點 */
+    max-width: 500px;               /* ✅ 限制最大寬度 */
     background-color: rgb(255, 183, 0);
     border-radius: 16px;
     padding: 0;
     margin: 0 auto;
-    overflow: hidden;         /* ✅ 圓角生效 */
-    display: block;           /* ❌ 移除 flex，避免撐開 */
+    overflow: hidden;               /* ✅ 圓角有效 */
+    display: inline-block;          /* ✅ 高度跟著圖片 */
+    text-align: center;             /* ✅ 讓內容置中 */
   }
 
   .works img.carousel-img {
-    width: 100%;              /* ✅ 撐滿手機寬度 */
-    height: auto;             /* ✅ 保持比例 */
-    max-height: 70vh;         /* ✅ 避免太長 */
-    object-fit: contain;      /* ✅ 不裁切 */
-    border-radius: 16px;      /* ✅ 圖片跟著圓角 */
+    width: 100%;                    /* ✅ 撐滿容器寬度 */
+    height: auto;                   /* ✅ 高度自動保持比例 */
+    object-fit: contain;            /* ✅ 完整顯示，不裁切 */
+    border-radius: 16px;            /* ✅ 圖片也有圓角 */
     display: block;
     margin: 0 auto;
   }

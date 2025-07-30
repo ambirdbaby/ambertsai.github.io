@@ -109,18 +109,16 @@ section {
    ✅ 室內作品 Carousel
 ================================*/
 
-/* 🎠 Carousel 容器 */
+/* 🎠 Carousel 容器 - 通用 */
 .carousel {
   position: relative;
-  max-width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.05);
-  min-height: 200px; /* 防止載入時高度=0 */
   border-radius: 16px;
+  background-color: rgb(255, 183, 0);
 }
 
-/* 🎨 圖片預設隱藏 */
+/* 🎨 圖片通用 */
 .carousel-img {
   display: none;
   opacity: 0;
@@ -128,9 +126,8 @@ section {
   border-radius: 16px;
 }
 
-/* ✅ 只有 active 的顯示 */
 .carousel-img.active {
-  display: block !important; 
+  display: block !important;
   opacity: 1;
 }
 
@@ -139,24 +136,19 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    width: 75% !important;           /* ✅ 容器寬度固定 */
-    max-width: 1000px !important;    /* ✅ 限制最大寬度 */
-    background-color: rgb(255, 183, 0);
-    border-radius: 16px;
+    width: 70%;              /* ✅ 縮小整體容器 */
+    max-width: 1000px;
     padding: 0;
-    margin: 0 auto;
-    overflow: hidden;
-    display: inline-block;
-    text-align: center;
   }
 
-  .carousel .works img.carousel-img {
-    width: 100% !important;          /* ✅ 圖片跟容器寬度 */
-    height: auto !important;         /* ✅ 高度自動 */
-    object-fit: contain !important;
-    border-radius: 16px !important;
-    display: block;
+  .carousel img.carousel-img {
+    width: 80%;              /* ✅ 圖片只佔容器 80%，跟 3D 作品一致 */
+    max-width: 900px;
+    height: auto;
+    object-fit: contain;
     margin: 0 auto;
+    display: block;
+    border-radius: 16px;
   }
 }
 
@@ -165,23 +157,17 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    width: auto !important;          /* ✅ 容器自適應圖片 */
-    max-width: 95% !important;       /* ✅ 留白避免貼邊 */
-    background-color: rgb(255, 183, 0);
-    border-radius: 16px;
+    width: 95%;              /* ✅ 留白，圓角可見 */
+    max-width: 95%;
     padding: 0;
-    margin: 0 auto;
-    overflow: hidden;
-    display: inline-block;           /* ✅ 高度自動跟著圖片 */
-    text-align: center;
   }
 
   .carousel img.carousel-img {
-    width: 100% !important;          /* ✅ 撐滿容器寬度 */
-    height: auto !important;         /* ✅ 保持比例 */
-    max-height: 70vh !important;     /* ✅ 避免太高 */
-    object-fit: contain !important;
-    border-radius: 16px !important;  /* ✅ 手機也有圓角 */
+    width: 100%;             /* ✅ 撐滿容器寬度 */
+    height: auto;
+    object-fit: contain;     /* ✅ 不裁切 */
+    max-height: 70vh;
+    border-radius: 16px;
     display: block;
     margin: 0 auto;
   }

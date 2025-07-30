@@ -165,22 +165,23 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    width: 90%;                     /* ✅ 整體再縮小一點 */
-    max-width: 500px;               /* ✅ 限制最大寬度 */
+    width: auto !important;          /* ✅ 容器自適應圖片 */
+    max-width: 95% !important;       /* ✅ 留白避免貼邊 */
     background-color: rgb(255, 183, 0);
     border-radius: 16px;
     padding: 0;
     margin: 0 auto;
-    overflow: hidden;               /* ✅ 圓角有效 */
-    display: inline-block;          /* ✅ 高度跟著圖片 */
-    text-align: center;             /* ✅ 讓內容置中 */
+    overflow: hidden;
+    display: inline-block;           /* ✅ 高度自動跟著圖片 */
+    text-align: center;
   }
 
-  .works img.carousel-img {
-    width: 100%;                    /* ✅ 撐滿容器寬度 */
-    height: auto;                   /* ✅ 高度自動保持比例 */
-    object-fit: contain;            /* ✅ 完整顯示，不裁切 */
-    border-radius: 16px;            /* ✅ 圖片也有圓角 */
+  .carousel img.carousel-img {
+    width: 100% !important;          /* ✅ 撐滿容器寬度 */
+    height: auto !important;         /* ✅ 保持比例 */
+    max-height: 70vh !important;     /* ✅ 避免太高 */
+    object-fit: contain !important;
+    border-radius: 16px !important;  /* ✅ 手機也有圓角 */
     display: block;
     margin: 0 auto;
   }

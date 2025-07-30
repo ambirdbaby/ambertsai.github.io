@@ -162,26 +162,24 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    width: 95%;                  /* ✅ 保留一點邊距，圓角才有空間顯示 */
+    width: 95%;
     max-width: 95%;
     background-color: rgb(255, 183, 0);
-    border-radius: 16px;         /* ✅ 手機版也有圓角 */
+    border-radius: 16px;
     padding: 0;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;            /* ✅ 避免圖片超出圓角 */
+    overflow: hidden;         /* ✅ 圓角生效 */
+    display: block;           /* ❌ 移除 flex，避免撐開 */
   }
 
   .works img.carousel-img {
-    width: 100%;                 /* ✅ 圖片自適應寬度 */
-    height: auto;                /* ✅ 自動高度保持比例 */
-    max-height: 80vh;            /* ✅ 避免過高 */
-    object-fit: contain;         /* ✅ 不裁切，保持完整圖片 */
-    border-radius: 16px;         /* ✅ 圖片也跟著圓角 */
-    margin: 0 auto;
+    width: 100%;              /* ✅ 撐滿手機寬度 */
+    height: auto;             /* ✅ 保持比例 */
+    max-height: 70vh;         /* ✅ 避免太長 */
+    object-fit: contain;      /* ✅ 不裁切 */
+    border-radius: 16px;      /* ✅ 圖片跟著圓角 */
     display: block;
+    margin: 0 auto;
   }
 }
 

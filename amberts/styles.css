@@ -139,23 +139,22 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    width: 75%;                  /* ✅ 整體縮小 */
+    width: 75%;                  /* ✅ 控制容器寬度 */
     max-width: 1000px;           /* ✅ 限制最大寬度 */
     background-color: rgb(255, 183, 0);
     border-radius: 16px;
     padding: 0;
     margin: 0 auto;
-    overflow: hidden;            /* ✅ 避免超出圓角 */
-    display: inline-block;       /* ✅ 高度跟著圖片 */
+    overflow: hidden;            /* ✅ 圓角生效 */
+    display: inline-block;       /* ✅ 高度隨圖片 */
     text-align: center;
   }
 
   .works img.carousel-img {
-    width: 100%;                 /* ✅ 撐滿 carousel 寬度 */
-    height: auto;                /* ✅ 保持原比例 */
-    max-height: 65vh;            /* ✅ 避免太高 */
-    object-fit: contain;         /* ✅ 不裁切 */
-    border-radius: 16px;         /* ✅ 圖片也跟著圓角 */
+    width: 100%;                 /* ✅ 跟著容器縮放，依「寬度」決定 */
+    height: auto;                /* ✅ 不強制高度 */
+    object-fit: contain;         /* ✅ 確保比例正確 */
+    border-radius: 16px;
     display: block;
     margin: 0 auto;
   }

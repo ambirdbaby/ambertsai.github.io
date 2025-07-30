@@ -146,8 +146,8 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel img.carousel-img {
-    width: 75%;                  /* ✅ 寬度縮小 */
-    max-width: 900px;
+    width: 90%;
+    max-width: 1200px;
     height: auto;
     object-fit: contain;
     border-radius: 16px;

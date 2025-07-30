@@ -130,7 +130,7 @@ section {
   margin: auto;
   display: none;                 /* 預設不顯示、不佔空間 */
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.8s ease;
   border-radius: 16px;
   max-width: 100%;
 }

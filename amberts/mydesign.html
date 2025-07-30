@@ -148,6 +148,27 @@
           <!-- 固定介紹文字 -->
           <div class="carousel-description">Tainan, Taiwan<br>2025</div>
         </div>
+
+
+        <!-- ✅ 第四組作品 -->
+        <div class="carousel-container">
+          <div id="project4" class="carousel">
+            <img src="images/MSC/嘉義泰郁/ty-01.jpg" class="carousel-img active" />
+            <img src="images/MSC/嘉義泰郁/ty-02.jpg" class="carousel-img" />
+            <img src="images/MSC/嘉義泰郁/ty-03.jpg" class="carousel-img" />
+            <img src="images/MSC/嘉義泰郁/ty-04.jpg" class="carousel-img" />
+            <img src="images/MSC/嘉義泰郁/ty-05.jpg" class="carousel-img" />
+            <img src="images/MSC/嘉義泰郁/ty-06.jpg" class="carousel-img" />
+    
+            <!-- 左右按鈕 + dots -->
+            <button class="carousel-btn prev" onclick="prevImage('project4')">←</button>
+            <button class="carousel-btn next" onclick="nextImage('project4')">→</button>
+            <div class="carousel-dots"></div>
+          </div>
+    
+          <!-- 固定介紹文字 -->
+          <div class="carousel-description">Tainan, Taiwan<br>2025</div>
+        </div>
     
       </div> <!-- ✅ 關閉 partofwork -->
     </div> <!-- ✅ 關閉 interior -->
@@ -257,7 +278,8 @@ function nextImage(id) {
 window.onload = function () {
   initCarousel('project1');
   initCarousel('project2');
-  initCarousel('project3');// 🔥 記得呼叫
+  initCarousel('project3');
+  initCarousel('project4') // 🔥 記得呼叫
 };
 </script>
 </body>

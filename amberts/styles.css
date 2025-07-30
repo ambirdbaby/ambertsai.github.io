@@ -139,10 +139,10 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .works img.carousel-img {
-    width: 70%;                 /* ✅ 從 90% 改成 70%，整體縮小 */
+    width: 60%;
     max-width: 1000px;          /* ✅ 限制最大寬度 */
     height: auto !important;
-    max-height: 65vh;           /* ✅ 限制高度更低，避免太佔畫面 */
+    max-height: 50vh;           /* ✅ 限制高度更低，避免太佔畫面 */
     object-fit: contain;
     margin: 0 auto;
     display: block;
@@ -150,7 +150,7 @@ section {
   }
 
   .carousel {
-    max-width: 80%;             /* ✅ Carousel 容器也一起縮小 */
+    max-width: 70%;             /* ✅ Carousel 容器也一起縮小 */
     padding: 10px 0;
     background-color: rgb(255, 183, 0);
   }

@@ -113,9 +113,12 @@ section {
 .carousel {
   position: relative;
   margin: 0 auto;
+  display: inline-block;       /* ✅ 容器高度跟著圖片走 */
   overflow: hidden;
   border-radius: 16px;
   background-color: rgb(255, 183, 0);
+  padding: 0;
+  text-align: center;
 }
 
 /* 🎨 圖片通用 */
@@ -135,19 +138,9 @@ section {
    💻 桌機版
 ================================*/
 @media (min-width: 1025px) {
-  .carousel {
-    display: inline-block;     /* ✅ 容器寬度跟內容走 */
-    background-color: rgb(255, 183, 0);
-    border-radius: 16px;
-    padding: 0;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
-  }
-
   .carousel img.carousel-img {
-    width: 80%;                /* ✅ 圖片縮小 */
-    max-width: 900px;
+    width: 75%;                /* ✅ 圖片寬度縮到 75% */
+    max-width: 900px;           /* ✅ 最大不超過 900px */
     height: auto;
     object-fit: contain;
     border-radius: 16px;
@@ -161,17 +154,17 @@ section {
 ================================*/
 @media (max-width: 1024px) {
   .carousel {
-    display: inline-block;     /* ✅ 容器寬度 = 圖片寬度 */
     max-width: 95%;
     margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
     background-color: rgb(255, 183, 0);
+    display: inline-block;     /* ✅ 自動跟著圖片縮放 */
   }
 
   .carousel img.carousel-img {
-    width: 100%;
-    height: auto;
+    width: 100%;               /* ✅ 撐滿手機寬度 */
+    height: auto;              /* ✅ 保持比例 */
     object-fit: contain;
     border-radius: 16px;
     display: block;

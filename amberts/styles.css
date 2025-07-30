@@ -139,23 +139,23 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .works img.carousel-img {
-    width: 90%;                 /* ✅ 圖片不要滿版 */
-    max-width: 1400px;          /* ✅ 最大寬度 */
+    width: 70%;                 /* ✅ 從 90% 改成 70%，整體縮小 */
+    max-width: 1000px;          /* ✅ 限制最大寬度 */
     height: auto !important;
-    max-height: 75vh;           /* ✅ 限制不超過螢幕 75% 高度 */
+    max-height: 65vh;           /* ✅ 限制高度更低，避免太佔畫面 */
     object-fit: contain;
     margin: 0 auto;
     display: block;
-    position: relative !important;
     border-radius: 16px;
   }
 
   .carousel {
-    max-width: 95%;             /* ✅ Carousel 容器本身不要滿版 */
+    max-width: 80%;             /* ✅ Carousel 容器也一起縮小 */
     padding: 10px 0;
     background-color: rgb(255, 183, 0);
   }
 }
+
 
 /* ==============================
    📱 手機 & 平板版

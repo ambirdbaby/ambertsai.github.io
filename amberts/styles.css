@@ -139,27 +139,26 @@ section {
 ================================*/
 @media (min-width: 1025px) {
   .carousel {
-    width: 75%;                  /* ✅ 控制容器寬度 */
-    max-width: 1000px;           /* ✅ 限制最大寬度 */
+    width: 75% !important;           /* ✅ 容器寬度固定 */
+    max-width: 1000px !important;    /* ✅ 限制最大寬度 */
     background-color: rgb(255, 183, 0);
     border-radius: 16px;
     padding: 0;
     margin: 0 auto;
-    overflow: hidden;            /* ✅ 圓角生效 */
-    display: inline-block;       /* ✅ 高度隨圖片 */
+    overflow: hidden;
+    display: inline-block;
     text-align: center;
   }
 
-  .works img.carousel-img {
-    width: 100%;                 /* ✅ 跟著容器縮放，依「寬度」決定 */
-    height: auto;                /* ✅ 不強制高度 */
-    object-fit: contain;         /* ✅ 確保比例正確 */
-    border-radius: 16px;
+  .carousel .works img.carousel-img {
+    width: 100% !important;          /* ✅ 圖片跟容器寬度 */
+    height: auto !important;         /* ✅ 高度自動 */
+    object-fit: contain !important;
+    border-radius: 16px !important;
     display: block;
     margin: 0 auto;
   }
 }
-
 
 /* ==============================
    📱 手機 & 平板版
